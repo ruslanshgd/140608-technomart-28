@@ -1,7 +1,7 @@
 # Личный проект «Техномарт»
 
 * Студент: [Ruslan Sharipov](https://up.htmlacademy.ru/htmlcss/28/user/140608).
-* Наставник: `Татьяна Симоненко`.
+* Наставник: [Татьяна Симоненко](https://htmlacademy.ru/profile/tatien).
 
 ---
 
