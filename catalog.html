@@ -66,32 +66,86 @@
 
     <!-- Основной контент -->
     <main>
-      <!-- DIV для контейнера -->
+      <!-- DIV для контейнера сетки -->
       <div>
-        <!-- Колонка определяющая секцию о компании -->
+        <!-- Хлебные крошки списком как навигация -->
+        <ul>
+          <li><img src="" alt=""></li>
+          <li><a href="#">Каталог</a></li>
+          <li><a href="#">Инструмент</a></li>
+          <li><a>Перфораторы</a></li>
+        </ul>
+        <!-- Секция перфораторы -->
         <section>
-          <h2>Компания «Техномарт»</h2>
-          <p>Настоящий мужской шоппинг начинается здесь!</p>
-          <p>Мы можем</p>
+          <h1>Перфораторы</h1>
+        </section>
+        <!-- DIV для колонки с фильтрацией товаров -->
+        <div>
+          <!-- Секция фильтрации по производителю -->
+          <section>
+            <h3>Производители:</h3>
+            <ul>
+              <li>
+                <input type="checkbox" name="bosch" id="bosch">
+                <label for="bosch">Bosch</label>
+              </li>
+              <li>
+                <input type="checkbox" name="Интерскол" id="Интерскол">
+                <label for="Интерскол">Интерскол</label>
+              </li>
+              <li>
+                <input type="checkbox" name="makita" id="makita">
+                <label for="makita">Makita</label>
+              </li>
+              <li>
+                <input type="checkbox" name="dewalt" id="dewalt">
+                <label for="dewalt">Dewalt</label>
+              </li>
+              <li>
+                <input type="checkbox" name="hitachi" id="hitachi">
+                <label for="hitachi">Hitachi</label>
+              </li>
+            </ul>
+          </section>
+          <!-- Секция фильтрации по питанию -->
+          <section>
+            <h3>Питание:</h3>
+            <ul>
+              <li>
+                <input type="radio" name="power" id="battery">
+                <label for="battery">Аккумуляторные</label>
+              </li>
+              <li>
+                <input type="radio" name="power" id="network">
+                <label for="network">Сетевые</label>
+              </li>
+            </ul>
+          </section>
+          <button type="submit">Показать</button>
+        </div>
+        <!-- DIV для большой колонки для списка товаров -->
+        <div>
+          <!-- Список товаров -->
           <ul>
-            <li>Деловые линии</li>
-            <li>Автотрейдинг</li>
+            <li>
+              <a href="#">
+                <article>
+                  <span>New</span>
+                  <img src="" alt="Изображение перфоратора">
+                  <h2>Перфоратор BOSCH BFG 600</h2>
+                  <p>30500 Р.</p>
+                  <button type="button">25500 Р.</button>
+                </article>
+              </a>
+            </li>
           </ul>
-          <button type="button">Подробнее о компании</button>
-      </section>
-      <!-- Колонка определяющая секцию контакты -->
-      <section>
-        <h2>Контакты</h2>
-        <p>Вы можете</p>
-        <div>карта</div>
-        <button type="button">Заблудились? Напишите нам!</button>
-      </section>
+        </div>
       </div>
     </main>
 
     <!-- Подвал сайта -->
     <footer>
-      <!-- DIV для контейнера -->
+      <!-- DIV для контейнера сетки -->
       <div>
         <!-- Блок для 1го ряда подвала -->
         <div>
