@@ -79,7 +79,9 @@
         <!-- Хлебные крошки списком как навигация -->
         <ul>
           <li>
-            <a href="#"><img src="img/icon-home.svg" alt="" /></a>
+            <a href="#"
+              ><img src="img/icon-home.svg" alt="Иконка вернуться домой"
+            /></a>
           </li>
           <li><a href="#">Каталог</a></li>
           <li><a href="#">Инструмент</a></li>
@@ -92,60 +94,64 @@
         <!-- DIV для колонки с фильтрацией товаров -->
         <div>
           <!-- Блок с фильтрами -->
-          <div>Фильтр:</div>
-          <!-- Секция фильтрации по цене -->
-          <section>
-            <h3>Цена:</h3>
-            <div>
-              <!-- Не знаю как сверстать такой контрол тегом каким-либо -->
-              <input type="range" value="0" max="30000" min="0" step="1" />
-            </div>
-            <div>
-              <input type="number" name="" id="" />
-              <input type="number" name="" id="" />
-            </div>
-          </section>
-          <!-- Секция фильтрации по производителю -->
-          <section>
-            <h3>Производители:</h3>
-            <ul>
-              <li>
-                <input type="checkbox" name="bosch" id="bosch" />
-                <label for="bosch">Bosch</label>
-              </li>
-              <li>
-                <input type="checkbox" name="Интерскол" id="Интерскол" />
-                <label for="Интерскол">Интерскол</label>
-              </li>
-              <li>
-                <input type="checkbox" name="makita" id="makita" />
-                <label for="makita">Makita</label>
-              </li>
-              <li>
-                <input type="checkbox" name="dewalt" id="dewalt" />
-                <label for="dewalt">Dewalt</label>
-              </li>
-              <li>
-                <input type="checkbox" name="hitachi" id="hitachi" />
-                <label for="hitachi">Hitachi</label>
-              </li>
-            </ul>
-          </section>
-          <!-- Секция фильтрации по питанию -->
-          <section>
-            <h3>Питание:</h3>
-            <ul>
-              <li>
-                <input type="radio" name="power" id="battery" />
-                <label for="battery">Аккумуляторные</label>
-              </li>
-              <li>
-                <input type="radio" name="power" id="network" />
-                <label for="network">Сетевые</label>
-              </li>
-            </ul>
-          </section>
-          <button type="submit">Показать</button>
+          <div>
+            <h2>Фильтр:</h2>
+            <!-- Секция фильтрации по цене -->
+            <form action="https://echo.htmlacademy.ru" method="get">
+              <fieldset>
+                <legend>Цена:</legend>
+                <div>
+                  <!-- Не знаю как сверстать такой контрол тегом каким-либо -->
+                  <input type="range" value="0" max="30000" min="0" step="1" />
+                </div>
+                <div>
+                  <input type="number" name="" id="" />
+                  <input type="number" name="" id="" />
+                </div>
+              </fieldset>
+              <!-- Секция фильтрации по производителю -->
+              <fieldset>
+                <legend>Производители:</legend>
+                <ul>
+                  <li>
+                    <input type="checkbox" name="bosch" id="bosch" />
+                    <label for="bosch">Bosch</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="Интерскол" id="Интерскол" />
+                    <label for="Интерскол">Интерскол</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="makita" id="makita" />
+                    <label for="makita">Makita</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="dewalt" id="dewalt" />
+                    <label for="dewalt">Dewalt</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="hitachi" id="hitachi" />
+                    <label for="hitachi">Hitachi</label>
+                  </li>
+                </ul>
+              </fieldset>
+              <fieldset>
+                <!-- Секция фильтрации по питанию -->
+                <legend>Питание:</legend>
+                <ul>
+                  <li>
+                    <input type="radio" name="power" id="battery" />
+                    <label for="battery">Аккумуляторные</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="power" id="network" />
+                    <label for="network">Сетевые</label>
+                  </li>
+                </ul>
+              </fieldset>
+              <button type="submit">Показать</button>
+            </form>
+          </div>
         </div>
         <!-- DIV для большой колонки для списка товаров -->
         <div>
@@ -158,12 +164,16 @@
               <li><a href="#">По функционалу</a></li>
             </ul>
             <div>
-              <button type="button">
-                <img src="img/icon-up-dir.svg" alt="" />
-              </button>
-              <button type="button">
-                <img src="img/icon-down-dir.svg" alt="" />
-              </button>
+              <input
+                type="image"
+                src="img/icon-up-dir.svg"
+                alt="Иконка сортировки"
+              />
+              <input
+                type="image"
+                src="img/icon-down-dir.svg"
+                alt="Иконка сортировки"
+              />
             </div>
           </div>
           <!-- Список товаров -->
@@ -391,5 +401,24 @@
         </div>
       </div>
     </footer>
+    <!-- DIV для модального окна -->
+    <div>
+      <!-- DIV для блока контента -->
+      <div>
+        <input
+          type="image"
+          src="img/icon-close.svg"
+          alt="Иконка закрыть"
+          aria-label="иконка закрыть"
+        />
+        <img src="img/icon-mark.svg" alt="Иконка с галочкой" />
+        <h2>Товар добавлен в корзину!</h2>
+      </div>
+      <!-- DIV для блока с кнопками -->
+      <div>
+        <button type="button">Оформить заказ</button>
+        <button type="button">Продолжить покупки</button>
+      </div>
+    </div>
   </body>
 </html>
