@@ -11,6 +11,8 @@
     5.2 Список интерактивных элементов в шапке
   6. Блок с телефоном и авторизацией
   7. Основная навигация
+  8. Футер
+  9. Блок: О компании
   Вспомогательные классы
 */
 
@@ -68,6 +70,10 @@ body {
   line-height: 19px;
 }
 
+.paragraph-1 {
+  font-size: 13px;
+  line-height: 24px;
+}
 .paragraph-2 {
   font-size: 18px;
   line-height: 24px;
@@ -198,6 +204,23 @@ body {
   background-image: url("../img/icon-login-hovered.svg");
 }
 
+/* 3.4 Кнопки красные */
+.button-red {
+  background-color: var(--basic-red);
+  font-size: 14px;
+  line-height: 18px;
+  padding: 10px 40px;
+  text-decoration: none;
+  color: var(--white);
+  text-align: center;
+  min-width: 220px;
+  transition: var(--basic-transition);
+}
+
+.button-red:active {
+  background-color: var(--error);
+}
+
 /* 4. Контейнеры */
 .container {
   display: flex;
@@ -223,18 +246,18 @@ body {
   display: flex;
 }
 /* 5.1 Логотип в шапке */
-.top-menu-logo {
+.main-logo {
   display: flex;
-  padding-left: 56px;
-  padding-right: 56px;
+  width: 220px;
   background-color: var(--basic-red);
   height: 42px;
   color: white;
   text-decoration: none;
   text-transform: uppercase;
   border-bottom: 5px solid rgba(0, 0, 0, 0.24);
+  justify-content: center;
 }
-.top-menu-logo:active {
+.main-logo:active {
   background-color: var(--error);
 }
 
@@ -367,7 +390,7 @@ body {
   background-color: #32425c;
 }
 
-.main-nav-list {
+.site-navigation {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -381,7 +404,7 @@ body {
   border-bottom: 5px solid var(--basic-grey);
 }
 
-.main-nav-list a {
+.site-navigation a {
   display: block;
   padding-top: 16px;
   padding-bottom: 16px;
@@ -394,18 +417,216 @@ body {
   transition: var(--basic-transition);
 }
 
-.main-nav-list a:hover {
+.site-navigation a:hover {
   background-color: var(--basic-grey);
 }
 
-.main-nav-list a:active {
+.site-navigation a:active {
   background-color: #1d2739;
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Футер */
+/* 8. Футер */
 .main-footer {
+  background-color: #32425C;
+}
+.main-footer .main-logo {
+  min-height: 62px;
+}
+
+.footer-navigation-wrapper {
+  padding-bottom: 40px;
+}
+
+.footer-contacts-wrapper {
+  display: flex;
   background-color: var(--basic-grey);
+}
+
+.main-footer .container {
+  flex-direction: column;
+}
+
+.main-footer .row {
+  display: flex;
+}
+
+.footer-navigation {
+  width: 549px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-left: auto;
+}
+
+.footer-navigation a {
+  color: var(--white);
+  text-decoration: none;
+  transition: var(--basic-transition);
+}
+.footer-navigation a:hover {
+  text-decoration: underline;
+}
+.footer-navigation a:active {
+  opacity: .5;
+}
+
+.footer-navigation-secondary {
+  margin-left: auto;
+  width: 525px;
+  align-items: center;
+}
+
+.footer-navigation-secondary a {
+  color: #FFD180;
+}
+
+.footer-address {
+  color: var(--white);
+  margin-right: 72px;
+}
+
+.footer-contacts {
+  width: 100%;
+  padding: 36px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copyright {
+  color: var(--white);
+  padding: 0;
+  margin: 0;
+}
+
+.footer-socials {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-socials li {
+  margin-right: 2px;
+}
+
+.footer-socials li:last-child {
+  margin-right: 0px;
+}
+
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #212A3A;
+  color: inherit;
+}
+
+.footer-socials a:hover,
+.footer-socials a:focus {
+  background-color: var(--basic-red);
+}
+
+.footer-contacts-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contacts-list li {
+  margin-right: 66px;
+}
+
+.footer-contacts-list li:last-child {
+  margin-right: 0px;
+}
+
+.footer-contacts-list span {
+  display: block;
+  color: var(--white);
+}
+
+.footer-contacts-list a {
+  color: #FFD180;
+  text-decoration: none;
+}
+.footer-contacts-list a:hover {
+  text-decoration: underline;
+}
+.footer-contacts-list a:active {
+  color: var(--basic-red);
+}
+
+
+/* 8. Блок: О компании */
+.about-company-block {
+  width: 100%;;
+  padding: 24px 0 70px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-company-info {
+  width: 100%;
+}
+
+.about-company-info h2,
+.about-company-contacts h2 {
+  margin: 0;
+  margin-bottom: 24px;
+}
+
+.about-company-info p:nth-child(2) {
+  margin-bottom: 24px;
+}
+
+.about-company-info .company-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.company-list li {
+  position: relative;
+  padding-left: 37px;
+  margin-bottom: 12px;
+}
+.company-list li:last-child {
+  margin-bottom: 0px;
+}
+.company-list li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 25px;
+  height: 2px;
+  background-color: var(--basic-red);
+  transform: translate(-50%, -50%);
+}
+
+.about-company-contacts {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.about-company-contacts p {
+  margin: 0;
+  margin-bottom: 34px;
+}
+
+.about-company-contacts img {
+  margin-bottom: 24px;
 }
 
 /* Вспомогательные классы */
