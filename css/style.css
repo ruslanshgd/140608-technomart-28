@@ -12,7 +12,10 @@
   6. Блок с телефоном и авторизацией
   7. Основная навигация
   8. Футер
-  9. Блок: О компании
+  9. Главная - Блок: О компании
+  10. Главная - Блок: Промо
+  11. Каталог - Хлебные крошки
+  12. Каталог - Категория товара
   Вспомогательные классы
 */
 
@@ -237,7 +240,6 @@ body {
 /* 5. Шапка */
 .main-header {
   background-color: var(--basic-background);
-  margin-bottom: 60px;
 }
 
 .top-menu {
@@ -566,8 +568,7 @@ body {
   color: var(--basic-red);
 }
 
-
-/* 8. Блок: О компании */
+/* 9. Главная - Блок: О компании */
 .about-company-block {
   width: 100%;;
   padding: 24px 0 70px 0;
@@ -627,6 +628,60 @@ body {
 
 .about-company-contacts img {
   margin-bottom: 24px;
+}
+
+/* 10. Главная - Блок: Промо */
+.promo {
+  margin-top: 60px;
+}
+
+/* 11. Каталог - Хлебные крошки */
+.catalog-breadcrumbs {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 20px 0;
+  width: 357px;
+}
+
+.catalog-breadcrumbs a {
+  color: var(--black);
+  text-decoration: none;
+}
+.catalog-breadcrumbs li {
+  position: relative;
+}
+
+.catalog-breadcrumbs li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -28px;
+  width: 8px;
+  height: 12px;
+  background-image: url("../img/icon-right-small.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  transform: translate(-50%, -50%);
+}
+
+.catalog-breadcrumbs li:first-child::before {
+  background-image: none;
+}
+
+/* 12. Каталог - Категория товара */
+.catalog-category {
+  display: flex;
+  padding: 30px;
+  width: 100%;
+  background-color: var(--basic-background);
+  margin-bottom: 20px;
+}
+.catalog-category h1 {
+  margin: 0;
+  color: #32425C;
 }
 
 /* Вспомогательные классы */
