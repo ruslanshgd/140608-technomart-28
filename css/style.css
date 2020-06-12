@@ -7,6 +7,7 @@
     3.3. Кнопки авторизации
     3.4. Кнопки красные
     3.5 Кнопки прозрачные
+    3.6 Кнопки зеленые
   4. Контейнеры
   5. Шапка
     5.1 Логотип в шапке
@@ -14,14 +15,13 @@
   6. Блок с телефоном и авторизацией
   7. Основная навигация
   8. Футер
-  9. Главная - Блок: О компании
-  10. Главная - Блок: Промо
-  11. Главная - Блок: Популярные продукты
-  12. Главная - Блок: Популярные производители
-  13. Главная - Блок: Сервисы (слайдер: доставка, гарантия, кредит)
-  14. Главная - Блок: Компания и Контакты
-  15. Каталог - Хлебные крошки
-  16. Каталог - Категория товара
+  9. Главная - Блок: Промо
+  10. Главная - Блок: Популярные продукты
+  11. Главная - Блок: Популярные производители
+  12. Главная - Блок: Сервисы (слайдер: доставка, гарантия, кредит)
+  13. Главная - Блок: Компания и Контакты
+  14. Каталог - Хлебные крошки
+  15. Каталог - Категория товара
   Вспомогательные классы
 */
 
@@ -247,6 +247,53 @@ body {
   background-color: rgba(169, 169, 169, .5);
  }
 
+ /* 3.6 Кнопки зеленые */
+.button-green {
+  cursor: pointer;
+  width: 135px;
+  background-color: var(--basic-green);
+  font-size: 14px;
+  line-height: 18px;
+  padding: 10px 24px;
+  text-decoration: none;
+  color: var(--white);
+  outline: none;
+  border-radius: 2px;
+  border: none;
+  border-bottom: 3px solid #367315;
+  transition: var(--basic-transition);
+}
+
+.button-green:hover {
+  background-color: var(--successful);
+}
+.button-green:active {
+  background-color: #518534;
+}
+
+.button-green-secondary {
+  cursor: pointer;
+  width: 135px;
+  background-color: var(--transparent);
+  font-size: 14px;
+  line-height: 18px;
+  padding: 10px 24px;
+  text-decoration: none;
+  color: #32425C;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  border: 3px solid #63A63E;
+  transition: var(--basic-transition);
+}
+
+.button-green-secondary:hover {
+  border-color: #32425C;
+}
+.button-green-secondary:active {
+  opacity: .5;
+}
+
 /* 4. Контейнеры */
 .container {
   display: flex;
@@ -420,9 +467,7 @@ body {
   flex-wrap: wrap;
   width: 100%;
   margin: 0;
-  padding: 0;
   list-style: none;
-  
   justify-content: space-between;
   padding: 0 24px;
   align-items: center;
@@ -591,69 +636,7 @@ body {
   color: var(--basic-red);
 }
 
-/* 9. Главная - Блок: О компании */
-.about-company-block {
-  width: 100%;;
-  padding: 24px 0 70px 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-.about-company-info {
-  width: 100%;
-}
-
-.about-company-info h2,
-.about-company-contacts h2 {
-  margin: 0;
-  margin-bottom: 24px;
-}
-
-.about-company-info p:nth-child(2) {
-  margin-bottom: 24px;
-}
-
-.about-company-info .company-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 20px;
-}
-
-.company-list li {
-  position: relative;
-  padding-left: 37px;
-  margin-bottom: 12px;
-}
-.company-list li:last-child {
-  margin-bottom: 0px;
-}
-.company-list li::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  width: 25px;
-  height: 2px;
-  background-color: var(--basic-red);
-  transform: translate(-50%, -50%);
-}
-
-.about-company-contacts {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-}
-.about-company-contacts p {
-  margin: 0;
-  margin-bottom: 34px;
-}
-
-.about-company-contacts img {
-  margin-bottom: 24px;
-}
-
-/* 10. Главная - Блок: Промо */
+/* 9. Главная - Блок: Промо */
 .promo {
   margin-top: 60px;
   display: grid;
@@ -821,7 +804,7 @@ body {
   background-color: var(--special-yellow);
  }
 
-/* 11. Главная - Блок: Популярные продукты */
+/* 10. Главная - Блок: Популярные продукты */
 
 .popular-products {
   display: grid;
@@ -840,7 +823,6 @@ body {
   margin-left: auto;
   padding: 10px 30px;
 }
-
 .popular-products-header h2 {
   margin: 0;
 }
@@ -857,36 +839,73 @@ body {
 
 .popular-products-list-item {
   display: flex;
-  justify-content: center;
-  align-items: center;
   border: 1px solid #EAEAEA;
 }
 
-.popular-products-list-item a {
+.popular-products-list-item-link {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  width: 100%;
   min-height: 318px;
   text-decoration: none;
   color: inherit;
-  transition: var(--basic-transition);
   box-shadow: none;
   padding: 32px 32px 20px 32px;
   background-color: var(--white);
-  z-index: 1;
   overflow: hidden;
+  transition: var(--basic-transition);
 }
-.popular-products-list-item a:hover {
+.popular-products-list-item-link:hover {
   box-shadow: var(--product-card-shadow);
+}
+.popular-products-list-item-link:hover::before {
+  opacity: 1;
+}
+.popular-products-list-item-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 50%;
+  background-color: rgba(255,255,255, 1);
+  opacity: 0;
+  z-index: 2;
+  transition: var(--basic-transition);
+}
+
+.popular-products-list-item-link:hover .popular-products-list-item-order {
+  opacity: 1;
+	transform: translateY(0px);
+}
+.popular-products-list-item-order {
+  position: absolute;
+  width: 135px;
+  height: 100%;
+  padding-top: 20px;
+  display: block;
+  justify-content: flex-start;
+  flex-direction: column;
+  z-index: 3;
+  color: inherit;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.5s;
+}
+
+.popular-products-list-item-order button:first-child {
+  margin-bottom: 10px;
 }
 
 .popular-products-list-item img {
   width: auto;
   height: 112px;
 }
+
 .badge-wrapper {
   position: absolute;
   right: -70px;
@@ -906,6 +925,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 999;
 }
 
 .popular-products-list-item h2 {
@@ -922,6 +942,7 @@ body {
   text-decoration: line-through;
   color: #A9A9A9;
 }
+
 .popular-products-list-item p:last-child {
   margin-top: 12px;
   padding: 10px 32px;
@@ -942,10 +963,11 @@ body {
   z-index: 999;
 }
 
-/* 12. Главная - Блок: Популярные производители */
+/* 11. Главная - Блок: Популярные производители */
 .popular-brands {
   display: grid;
   margin-top: 70px;
+  margin-bottom: 70px;
 }
 
 .popular-brands-header {
@@ -960,10 +982,6 @@ body {
   margin: 0;
 }
 
-.popular-brands-header a {
-  align-self: center;
-}
-
 .popular-brands-list {
   display: grid;
   list-style: none;
@@ -972,7 +990,6 @@ body {
   grid-template-columns: repeat(4, minmax(220px, 1fr));
   grid-template-rows: repeat(2, 145px);
   grid-gap: 20px;
-  text-align: center;
 }
 
 .popular-brands-list-item {
@@ -981,12 +998,200 @@ body {
   align-items: center;
   border: 1px solid #EAEAEA;
 }
+.popular-brands-list-item-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: var(--basic-transition);
+}
 
-/* 13. Главная - Блок: Сервисы (слайдер: доставка, гарантия, кредит) */
+.popular-brands-list-item-link:hover {
+ box-shadow: var(--product-card-shadow);
+}
 
-/* 14. Главная - Блок: Компания и Контакты */
+.popular-brands-list-item-link:active {
+ opacity: .5;
+}
 
-/* 15. Каталог - Хлебные крошки */
+/* 12. Главная - Блок: Сервисы (слайдер: доставка, гарантия, кредит) */
+.service-block {
+  background-color: var(--basic-background);
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.service-block-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 283px;
+  grid-template-areas: "service-block-content service-block-content" "service-block-slider service-block-slider";
+  width: 100%;
+}
+
+.service-block-content { 
+  grid-area: service-block-content;
+}
+.service-block-content h2,
+.service-block-content p {
+  margin: 0;
+  margin-bottom: 24px;
+}
+
+.service-block-slider {
+  display: grid;
+  grid-template-columns: 240px 80px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "service-block-slider-controls . service-block-slider-content";
+  grid-area: service-block-slider;
+}
+
+.service-block-slider-controls { 
+  grid-area: service-block-slider-controls;
+  align-self: center;
+}
+
+.service-block-slider-controls-list {
+  position: relative;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.service-block-slider-controls-list::before {
+  content: "";
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background-image: url(..//img/slider-shadow.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  width: 10px;
+  height: 279px;
+  background-size: 10px 279px;
+}
+
+.service-block-slider-controls-list input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+.service-block-slider-controls-list label {
+  display: block;
+  padding: 16px 20px;
+  color: var(--white);
+  text-decoration: none;
+  background-color: #32425C;
+  transition: var(--basic-transition);
+  cursor: pointer;
+}
+.service-block-slider-controls-list label:hover {
+  background-color: #293449;
+}
+
+.service-block-slider-controls-list input:checked + label {
+  color:#32425C ;
+  background-color: var(--white);
+}
+
+.service-block-slider-content { 
+  grid-area: service-block-slider-content;
+  position: relative;
+  padding-top: 48px;
+}
+
+.service-block-slider-content h2 {
+  margin: 0;
+  margin-bottom: 30px;
+  color: #32425C;
+}
+
+.service-block-slider-content img {
+  position: absolute;
+  bottom: -64px;
+  right: 0;
+}
+
+/* 13. Главная - Блок: Компания и Контакты */
+.company-block {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 300px;
+  padding-top: 72px;
+  padding-bottom: 78px;
+  grid-template-areas: "about contacts";
+}
+
+.about-wrapper { 
+  grid-area: about;
+}
+
+.contacts-wrapper { 
+  grid-area: contacts;
+}
+
+.about-content,
+.contacts-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.about-content h2,
+.contacts-content h2 {
+  margin: 0;
+  margin-bottom: 24px;
+ }
+.about-content p,
+.contacts-content p {
+  margin: 0;
+ }
+
+.about-content p:nth-child(2),
+.contacts-content p:nth-child(2) {
+  margin-bottom: 24px;
+ }
+
+ .about-content .company-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.company-list  .company-list-item {
+  position: relative;
+  padding-left: 37px;
+  margin-bottom: 12px;
+}
+.company-list .company-list-item:last-child {
+  margin-bottom: 0px;
+}
+.company-list .company-list-item::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 25px;
+  height: 2px;
+  background-color: var(--basic-red);
+  transform: translate(-50%, -50%);
+}
+
+.contacts-content h2 {
+  margin-bottom: 10px;
+}
+
+ .contacts-content a {
+   align-self: stretch;
+ }
+
+/* 14. Каталог - Хлебные крошки */
 .catalog-breadcrumbs {
   display: flex;
   list-style: none;
@@ -1023,7 +1228,7 @@ body {
   background-image: none;
 }
 
-/* 16. Каталог - Категория товара */
+/* 15. Каталог - Категория товара */
 .catalog-category {
   display: flex;
   padding: 30px;
