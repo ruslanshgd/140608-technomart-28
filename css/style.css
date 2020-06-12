@@ -22,6 +22,7 @@
   13. Главная - Блок: Компания и Контакты
   14. Каталог - Хлебные крошки
   15. Каталог - Категория товара
+  16. Каталог - Фильтры и список товаров
   Вспомогательные классы
 */
 
@@ -839,14 +840,15 @@ body {
 
 .popular-products-list-item {
   display: flex;
+  flex-wrap: wrap;
   border: 1px solid #EAEAEA;
+  vertical-align: top;
 }
 
 .popular-products-list-item-link {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
   min-height: 318px;
@@ -935,7 +937,7 @@ body {
   line-height: 20px;
 }
 
-.popular-products-list-item p {
+.popular-products-list-item-link p {
   margin: 0;
   font-size: 17px;
   line-height: 18px;
@@ -943,12 +945,26 @@ body {
   color: #A9A9A9;
 }
 
-.popular-products-list-item p:last-child {
+.popular-products-list-item-link .new-price {
+  position: relative;
   margin-top: 12px;
+  width: 55px;
   padding: 10px 32px;
   color: var(--white);
   text-decoration: none;
+  border-radius: 3px;
   background-color: var(--basic-red);
+}
+
+.popular-products-list-item-link .new-price::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -28px;
+  width: 0;
+  height: 0;
+  border: 19px solid var(--white);
+  border-left-color: var(--basic-red);
 }
 
 .popular-products-list-item a:hover::after {
@@ -1239,6 +1255,29 @@ body {
 .catalog-category h1 {
   margin: 0;
   color: #32425C;
+}
+
+/* 16. Каталог - Фильтры и список товаров */
+.grid-container {
+  display: grid;
+  grid-template-columns: 220px 100%;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "catalog-filter-wrapper catalog-wrapper";
+}
+
+.catalog-filter-wrapper { 
+  grid-area: catalog-filter-wrapper;
+}
+
+.catalog-wrapper { 
+  grid-area: catalog-wrapper;
+}
+
+.catalog-list {
+  display: grid;
+  grid-template-columns: repeat(3, 220px);
+  grid-gap: 20px;
 }
 
 /* Вспомогательные классы */
