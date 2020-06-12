@@ -5,6 +5,8 @@
     3.1 Общий класс для стилизации кнопок в верхнем меню
     3.2. Кнопки Закладки, Корзина, Оформить заказ
     3.3. Кнопки авторизации
+    3.4. Кнопки красные
+    3.5 Кнопки прозрачные
   4. Контейнеры
   5. Шапка
     5.1 Логотип в шапке
@@ -82,7 +84,7 @@ body {
   font-size: 13px;
   line-height: 24px;
 }
-.paragraph-2 {
+.paragraph-secondary {
   font-size: 18px;
   line-height: 24px;
 }
@@ -227,6 +229,23 @@ body {
 .button-red:active {
   background-color: var(--error);
 }
+/* 3.5 Кнопки прозрачные */
+.button-transparent {
+  display: block;
+  color: var(--white);
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, .3);
+  padding: 10px 24px;
+  transition: var(--basic-transition);
+ }
+
+ .button-transparent:hover {
+  background-color: rgba(197, 197, 197, .3);
+ }
+
+ .button-transparent:active {
+  background-color: rgba(169, 169, 169, .5);
+ }
 
 /* 4. Контейнеры */
 .container {
@@ -636,58 +655,177 @@ body {
 
 /* 10. Главная - Блок: Промо */
 .promo {
-  margin-top: 70px;
+  margin-top: 60px;
   display: grid;
 }
 
 .promo-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 123px 256px;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 123px 266px;
   gap: 20px 20px;
   grid-template-areas: "materials tool machine" "slider slider inner-wrapper";
+  margin: 0;
+  padding: 0;
 }
 
-.promo-list .materials { 
-  grid-area: materials;
+.promo-list-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px 20px 20px;
+  color: var(--white);
+}
+
+.promo-list-item .button-transparent {
+  width: 135px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.promo-list-item h2 {
+  margin: 0;
+  margin-bottom: 14px;
+}
+
+.promo-list-materials { 
+  grid-area: materials;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--special-yellow);
  }
 
-.promo-list .tool { 
+ .promo-list-tool { 
   grid-area: tool;
+  background-color: var(--special-blue);
  }
 
-.promo-list .machine { 
+.promo-list-machine { 
   grid-area: machine;
+  background-color: var(--special-lilac);
  }
 
-.promo-list .slider { 
+ .promo-slider { 
   grid-area: slider;
   overflow: hidden;
+  position: relative;
+  padding: 20px 25px;
  }
+
+.promo-slider-wrapper {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-rows: 104px 1fr 38px;
+  grid-template-areas: "slider-content slider-content" "slider-controls slider-controls" "slider-footer slider-footer";
+}
+
+.promo-slider-content {
+  grid-area: slider-content;
+}
+
+.promo-slider-content h2 {
+  margin-bottom: 5px;
+}
+
+.promo-slider-content p {
+  margin: 0;
+}
+
+.promo-slider-content img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -999;
+}
+
+.promo-slider-controls {
+  grid-area: slider-controls;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.promo-slider-controls input:last-child {
+  justify-self: end;
+  transform: scaleX(-1);
+}
+
+.promo-slider-footer {
+  display: grid;
+  grid-template-columns: 192px 1fr 192px;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "slider-action slider-paging .";
+  grid-area: slider-footer;
+}
+
+.promo-slider-action {
+  grid-area: slider-action;
+}
+
+.promo-slider-paging {
+  grid-area: slider-paging;
+  align-self: center;
+  justify-self: center;
+  position: relative;
+}
+
+.promo-slider-paging .radio-wrapper {
+  margin-right: 20px;
+}
+.promo-slider-paging .radio-wrapper:last-child {
+  margin-right: 0px;
+}
+
+.promo-slider-paging .radio-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+
+.promo-slider-paging .radio {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-image: url(../img/controls/slider-off.svg);
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  background-position: center;
+}
+
+.promo-slider-paging .radio-input:checked + .radio {
+  background-image: url(../img/controls//slider-on.svg);
+}
 
  .promo-list .inner-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 1px 1px;
-  grid-template-areas: "sales sales" "delivery delivery";
+  gap: 20px;
+  grid-template-areas: "sales" "delivery";
   grid-area: inner-wrapper;
 }
 
-.inner-wrapper .sales { 
+.promo-list-sales { 
   grid-area: sales;
+  background-color: #8ED78F;
  }
- .inner-wrapper .delivery { 
+ .promo-list-delivery { 
   grid-area: delivery;
+  background-color: var(--special-yellow);
  }
 
 /* 11. Главная - Блок: Популярные продукты */
 
 .popular-products {
   display: grid;
-  margin-top: 70px;
+  margin-top: 60px;
 }
 
 .popular-products-header {
@@ -724,11 +862,12 @@ body {
   border: 1px solid #EAEAEA;
 }
 
-.popular-products-list-item:last-child {
-  margin-right: 0px;
-}
-
 .popular-products-list-item a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
   min-height: 318px;
   text-decoration: none;
@@ -742,19 +881,18 @@ body {
 }
 .popular-products-list-item a:hover {
   box-shadow: var(--product-card-shadow);
-  z-index: 999;
 }
 
 .popular-products-list-item img {
   width: auto;
   height: 112px;
 }
-.popular-products-list-item .badge-wrapper {
+.badge-wrapper {
   position: absolute;
   right: -70px;
   top: 10px;
 }
-.popular-products-list-item .badge-new {
+.badge-new {
   position: relative;
   right: 0px;
   top: 0px;
@@ -790,6 +928,18 @@ body {
   color: var(--white);
   text-decoration: none;
   background-color: var(--basic-red);
+}
+
+.popular-products-list-item a:hover::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: var(--white);
+  z-index: 999;
 }
 
 /* 12. Главная - Блок: Популярные производители */

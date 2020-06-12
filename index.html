@@ -84,67 +84,79 @@
       <!-- DIV для строки, которая состоит из 3х карточек категорий каталога -->
       <div class="promo">
         <!-- Карточки на категорию каталога -->
-        <div class="promo-list">
-          <div class="materials">
+        <ul class="promo-list">
+          <li class="promo-list-item promo-list-materials">
+            <div class="badge-wrapper">
+              <div class="badge-new">New</div>
+            </div>
             <div>
-              <h2>Материалы</h2>
-              <span>На любой вкус</span>
+              <h2 class="heading-3">Материалы</h2>
+              <a class="button-transparent" href="#">На любой вкус</a>
             </div>
             <img src="img/categories/icon-paint-bucket.svg" alt="Иконка с банкой краски" />
-            <img src="img/badge-new.png" alt="Бейджик с надписью new" />
-          </div>
-          <div class="tool">
+          </li>
+          <li class="promo-list-item promo-list-tool">
             <div>
-              <h2>Инструмент</h2>
-              <span>На все случаи</span>
+              <h2 class="heading-3">Инструмент</h2>
+              <a class="button-transparent" href="#">На все случаи</a>
             </div>
             <img src="img/categories/icon-drill.svg" alt="Иконка с дрелью" />
-          </div>
-          <div class="machine">
+          </li>
+          <li class="promo-list-item promo-list-machine">
             <div>
-              <h2>Техника</h2>
-              <span>Для стройки</span>
+              <h2 class="heading-3">Техника</h2>
+              <a class="button-transparent" href="#">Для стройки</a>
             </div>
             <img src="img/categories/icon-tractor.svg" alt="Иконка с трактором" />
-          </div>
-          <div class="slider">
-            <!-- DIV для Слайдера -->
-            <div>
-              <!-- DIV для элементов управления слайдером. В будущем абсолютной позицией можно будет выравнять по центру относительно вертикальной оси -->
-              <div>
+          </li>
+          <li class="promo-list-item promo-slider">
+            <div class="promo-slider-wrapper ">
+              <section class="promo-slider-content">
+                <header>
+                  <h2 class="heading-1 uppercase">Перфораторы</h2>
+                  <p class="paragraph-secondary">Настоящие мужские игрушки</p>
+                </header>
+                <img src="img/slider/slider-0001.jpg" alt="Изображение мужчины с перфоратором" />
+              </section>
+              <div class="promo-slider-controls">
                 <input type="image" src="img/icon-left.svg" alt="Кнопка листающая слайды назад" />
                 <input type="image" src="img/icon-left.svg" alt="Кнопка листающая слайды вперед" />
               </div>
-              <!-- Секция для первого слайда -->
-              <section>
-                <!-- Шапка с заголовком слайда -->
-                <header>
-                  <h2>Перфораторы</h2>
-                  <p>Настоящие мужские игрушки</p>
-                </header>
-                <img src="img/slider/slider-0001.jpg" alt="Изображение мужчины с перфоратором" />
-                <a href="catalog.html">Открыть каталог</a>
-              </section>
+              <div class="promo-slider-footer">
+                <div class="slider-action">
+                  <a class="button-red" href="#">Открыть каталог</a>
+                </div>
+                <div class="promo-slider-paging">
+                  <label class="radio-wrapper">
+                    <input class="radio-input" name="slides" type="radio" id="first" value="first">
+                    <span class="radio"></span>
+                  </label>
+                  <label class="radio-wrapper">
+                    <input class="radio-input" name="slides" type="radio" id="second" value="second" checked>
+                    <span class="radio "></span>
+                  </label>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="inner-wrapper">
-            <div class="sales">
+          </li>
+          <li class="inner-wrapper">
+            <div class="promo-list-item promo-list-sales">
               <div>
-                <h2>Скидки 50%</h2>
-                <span>На 350 товаров</span>
+                <h2 class="heading-3">Скидки 50%</h2>
+                <a class="button-transparent" href="#">На 350 товаров</a>
               </div>
               <img src="img/categories/icon-shopping-cart.svg" alt="Иконка с тележкой для покупок" />
             </div>
-            <div class="delivery">
+            <div class="promo-list-item promo-list-delivery">
               <div>
-                <h2>Доставка</h2>
-                <span>Бесплатно</span>
+                <h2 class="heading-3">Доставка</h2>
+                <a class="button-transparent" href="#">Бесплатно</a>
               </div>
               <img src="img/categories/icon-truck.svg" alt="Иконка с грузовиком" />
             </div>
-          </div>
-        </div>
+          </li>
       </div>
+    </div>
     </div>
 
     <!-- DIV для контейнера -->
@@ -267,9 +279,9 @@
           <p class="paragraph-1">Мы можем доставить ваш товар в самые отдаленные точки России!</br>
             Техномарт работает со многими транспортными компаниями:</p>
           <ul class="company-list">
-            <li class="paragraph-2">Деловые линии</li>
-            <li class="paragraph-2">Автотрейдинг</li>
-            <li class="paragraph-2">ЖелДорЭкспедиция</li>
+            <li class="paragraph-secondary">Деловые линии</li>
+            <li class="paragraph-secondary">Автотрейдинг</li>
+            <li class="paragraph-secondary">ЖелДорЭкспедиция</li>
           </ul>
           <a href="#" class="button-red uppercase">Подробнее о компании</a>
         </section>
@@ -296,24 +308,24 @@
             <img src="img/logo-technomart.svg" alt="Логотип магазина «Техномарт»" />
           </a>
           <ul class="footer-navigation">
-            <li><a class="paragraph-2" href="#">Компания</a></li>
-            <li><a class="paragraph-2" href="#">Новости</a></li>
-            <li><a class="paragraph-2" href="catalog.html">Каталог</a></li>
-            <li><a class="paragraph-2" href="#">Доставка</a></li>
-            <li><a class="paragraph-2" href="#">Контакты</a></li>
+            <li><a class="paragraph-secondary" href="#">Компания</a></li>
+            <li><a class="paragraph-secondary" href="#">Новости</a></li>
+            <li><a class="paragraph-secondary" href="catalog.html">Каталог</a></li>
+            <li><a class="paragraph-secondary" href="#">Доставка</a></li>
+            <li><a class="paragraph-secondary" href="#">Контакты</a></li>
           </ul>
         </div>
         <!-- Блок для 2го ряда подвала -->
         <div class="row">
-          <p class="paragraph-2 footer-address">
+          <p class="paragraph-secondary footer-address">
             г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br />+7 (812)
             555-05-55
           </p>
           <ul class="footer-navigation footer-navigation-secondary">
-            <li><a class="paragraph-2" href="#">Материалы</a></li>
-            <li><a class="paragraph-2" href="#">Техника</a></li>
-            <li><a class="paragraph-2" href="#">Инструмент</a></li>
-            <li><a class="paragraph-2" href="#">Спецпредложения</a></li>
+            <li><a class="paragraph-secondary" href="#">Материалы</a></li>
+            <li><a class="paragraph-secondary" href="#">Техника</a></li>
+            <li><a class="paragraph-secondary" href="#">Инструмент</a></li>
+            <li><a class="paragraph-secondary" href="#">Спецпредложения</a></li>
           </ul>
         </div>
       </div>
