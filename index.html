@@ -84,66 +84,65 @@
       <!-- DIV для строки, которая состоит из 3х карточек категорий каталога -->
       <div class="promo">
         <!-- Карточки на категорию каталога -->
-        <section>
-          <!-- DIV для контейнера колонки -->
-          <div>
-            <h2>Материалы</h2>
-            <span>На любой вкус</span>
-          </div>
-          <img src="img/categories/icon-paint-bucket.svg" alt="Иконка с банкой краски" />
-          <img src="img/badge-new.png" alt="Бейджик с надписью new" />
-        </section>
-        <section>
-          <div>
-            <h2>Инструмент</h2>
-            <span>На все случаи</span>
-          </div>
-          <img src="img/categories/icon-drill.svg" alt="Иконка с дрелью" />
-        </section>
-        <section>
-          <div>
-            <h2>Техника</h2>
-            <span>Для стройки</span>
-          </div>
-          <img src="img/categories/icon-tractor.svg" alt="Иконка с трактором" />
-        </section>
-      </div>
-      <!-- DIV для строки, которая включает в себя слайдер и 2 карточки -->
-      <div>
-        <!-- DIV для Слайдера -->
-        <div>
-          <!-- DIV для элементов управления слайдером. В будущем абсолютной позицией можно будет выравнять по центру относительно вертикальной оси -->
-          <div>
-            <input type="image" src="img/icon-left.svg" alt="Кнопка листающая слайды назад" />
-            <input type="image" src="img/icon-left.svg" alt="Кнопка листающая слайды вперед" />
-          </div>
-          <!-- Секция для первого слайда -->
-          <section>
-            <!-- Шапка с заголовком слайда -->
-            <header>
-              <h2>Перфораторы</h2>
-              <p>Настоящие мужские игрушки</p>
-            </header>
-            <img src="img/slider/slider-0001.jpg" alt="Изображение мужчины с перфоратором" />
-            <a href="catalog.html">Открыть каталог</a>
-          </section>
-        </div>
-        <!-- DIV для колонки, включающей 2 карточки -->
-        <div>
-          <section>
+        <div class="promo-list">
+          <div class="materials">
             <div>
-              <h2>Скидки 50%</h2>
-              <span>На 350 товаров</span>
+              <h2>Материалы</h2>
+              <span>На любой вкус</span>
             </div>
-            <img src="img/categories/icon-shopping-cart.svg" alt="Иконка с тележкой для покупок" />
-          </section>
-          <section>
+            <img src="img/categories/icon-paint-bucket.svg" alt="Иконка с банкой краски" />
+            <img src="img/badge-new.png" alt="Бейджик с надписью new" />
+          </div>
+          <div class="tool">
             <div>
-              <h2>Доставка</h2>
-              <span>Бесплатно</span>
+              <h2>Инструмент</h2>
+              <span>На все случаи</span>
             </div>
-            <img src="img/categories/icon-truck.svg" alt="Иконка с машиной" />
-          </section>
+            <img src="img/categories/icon-drill.svg" alt="Иконка с дрелью" />
+          </div>
+          <div class="machine">
+            <div>
+              <h2>Техника</h2>
+              <span>Для стройки</span>
+            </div>
+            <img src="img/categories/icon-tractor.svg" alt="Иконка с трактором" />
+          </div>
+          <div class="slider">
+            <!-- DIV для Слайдера -->
+            <div>
+              <!-- DIV для элементов управления слайдером. В будущем абсолютной позицией можно будет выравнять по центру относительно вертикальной оси -->
+              <div>
+                <input type="image" src="img/icon-left.svg" alt="Кнопка листающая слайды назад" />
+                <input type="image" src="img/icon-left.svg" alt="Кнопка листающая слайды вперед" />
+              </div>
+              <!-- Секция для первого слайда -->
+              <section>
+                <!-- Шапка с заголовком слайда -->
+                <header>
+                  <h2>Перфораторы</h2>
+                  <p>Настоящие мужские игрушки</p>
+                </header>
+                <img src="img/slider/slider-0001.jpg" alt="Изображение мужчины с перфоратором" />
+                <a href="catalog.html">Открыть каталог</a>
+              </section>
+            </div>
+          </div>
+          <div class="inner-wrapper">
+            <div class="sales">
+              <div>
+                <h2>Скидки 50%</h2>
+                <span>На 350 товаров</span>
+              </div>
+              <img src="img/categories/icon-shopping-cart.svg" alt="Иконка с тележкой для покупок" />
+            </div>
+            <div class="delivery">
+              <div>
+                <h2>Доставка</h2>
+                <span>Бесплатно</span>
+              </div>
+              <img src="img/categories/icon-truck.svg" alt="Иконка с грузовиком" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -151,75 +150,74 @@
     <!-- DIV для контейнера -->
     <div class="container">
       <!-- Секция с заголовком и ссылкой на все популярные товары -->
-      <section class="popular-producs">
-        <h2 class="heading-2 uppercase">Популярные товары:</h2>
-        <a href="#" class="button">Все популярные товары</a>
-      </section>
-      <!-- Список популярных товаров -->
-      <ul>
-        <li>
-          <a href="#">
-            <article>
+      <section class="popular-products">
+        <header class="popular-products-header">
+          <h2 class="heading-secondary uppercase">Популярные товары:</h2>
+          <a href="#" class="button-red">Все популярные товары</a>
+        </header>
+        <!-- Список популярных товаров -->
+        <ul class="popular-products-list">
+          <li class="popular-products-list-item">
+            <a href="#">
               <img src="img/products/perforator-0001.jpg" alt="Изображение перфоратора" />
               <h2>Перфоратор BOSCH BFG 9000</h2>
               <p>32500 Р.</p>
               <p>25500 Р.</p>
-            </article>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <article>
-              <span>New</span>
+            </a>
+          </li>
+          <li class="popular-products-list-item">
+            <a href="#">
+              <div class="badge-wrapper">
+                <div class="badge-new">New</div>
+              </div>
               <img src="img/products/perforator-0002.jpg" alt="Изображение перфоратора" />
               <h2>Перфоратор BOSCH BFG 3000</h2>
               <p>22500 Р.</p>
               <p>15500 Р.</p>
-            </article>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <article>
-              <span>New</span>
+            </a>
+          </li>
+          <li class="popular-products-list-item">
+            <a href="#">
               <img src="img/products/perforator-0003.jpg" alt="Изображение перфоратора" />
               <h2>Перфоратор BOSCH BFG 6000</h2>
               <p>30500 Р.</p>
               <p>25500 Р.</p>
-            </article>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <article>
-              <span>New</span>
+            </a>
+          </li>
+          <li class="popular-products-list-item">
+            <a href="#">
+              <div class="badge-wrapper">
+                <div class="badge-new">New</div>
+              </div>
               <img src="img/products/perforator-0004.jpg" alt="Изображение перфоратора" />
-              <h2>Перфоратор BOSCH BFG 2000</h2>
+              <h2 class="bold">Перфоратор BOSCH BFG 2000</h2>
               <p>12500 Р.</p>
-            </article>
-          </a>
-        </li>
-      </ul>
+            </a>
+          </li>
+        </ul>
+      </section>
     </div>
 
     <!-- DIV для контейнера -->
     <div class="container">
       <!-- Секция с заголовком и ссылкой на всех производителей -->
-      <section>
-        <h2 class="heading-2 uppercase">Популярные производители:</h2>
-        <a href="#">Все производители</a>
+      <section class="popular-brands">
+        <header class="popular-brands-header">
+          <h2 class="heading-secondary uppercase">Популярные производители:</h2>
+          <a href="#" class="button-red">Все производители</a>
+        </header>
+        <!-- Список популярных производителей -->
+        <ul class="popular-brands-list">
+          <li class="popular-brands-list-item"><img src="img/brands/logo-01.png" alt="Логотип bosch" /></li>
+          <li class="popular-brands-list-item"><img src="img/brands/logo-02.png" alt="Логотип makita" /></li>
+          <li class="popular-brands-list-item"><img src="img/brands/logo-03.png" alt="Логотип dewalt" /></li>
+          <li class="popular-brands-list-item"><img src="img/brands/logo-04.png" alt="Логотип интерскол" /></li>
+          <li class="popular-brands-list-item"><img src="img/brands/logo-05.png" alt="Логотип hitachi" /></li>
+          <li class="popular-brands-list-item"><img src="img/brands/logo-06.png" alt="Логотип lg" /></li>
+          <li class="popular-brands-list-item"><img src="img/brands/logo-07.png" alt="Логотип aeg" /></li>
+          <li class="popular-brands-list-item"><img src="img/brands/logo-08.png" alt="Логотип metabo" /></li>
+        </ul>
       </section>
-      <!-- Список популярных производителей -->
-      <ul>
-        <li><img src="img/brands/logo-01.png" alt="Логотип bosch" /></li>
-        <li><img src="img/brands/logo-02.png" alt="Логотип makita" /></li>
-        <li><img src="img/brands/logo-03.png" alt="Логотип dewalt" /></li>
-        <li><img src="img/brands/logo-04.png" alt="Логотип интерскол" /></li>
-        <li><img src="img/brands/logo-05.png" alt="Логотип hitachi" /></li>
-        <li><img src="img/brands/logo-06.png" alt="Логотип lg" /></li>
-        <li><img src="img/brands/logo-07.png" alt="Логотип aeg" /></li>
-        <li><img src="img/brands/logo-08.png" alt="Логотип metabo" /></li>
-      </ul>
     </div>
 
     <!-- DIV для фона на всю страницу -->
@@ -227,7 +225,7 @@
       <!-- DIV для контейнера -->
       <div class="container">
         <section>
-          <h2 class="heading-2 uppercase">Сервисы</h2>
+          <h2 class="heading-secondary uppercase">Сервисы</h2>
           <p class="paragraph-1">
             Хороший интернет-магазин отличается от плохого не только
             ценами!<br />
@@ -243,7 +241,7 @@
             </ul>
             <!-- DIV для контента слайда -->
             <div>
-              <h2 class="heading-2 uppercase">Доставка</h2>
+              <h2 class="heading-secondary uppercase">Доставка</h2>
               <p class="paragraph-1">
                 Мы с удовольствием доставим ваш товар прямо<br />к вашему
                 подъезду совершенно бесплатно!<br />Ведь мы неплохо
@@ -263,7 +261,7 @@
       <div class="about-company-block">
         <!-- Колонка определяющая секцию о компании -->
         <section class="about-company-info">
-          <h2 class="heading-2 uppercase">Компания «Техномарт»</h2>
+          <h2 class="heading-secondary uppercase">Компания «Техномарт»</h2>
           <p class="paragraph-1">Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для</br>ремонта и
             строительства не оставит равнодушными любителей сэкономить на</br>гастарбайтерах.</p>
           <p class="paragraph-1">Мы можем доставить ваш товар в самые отдаленные точки России!</br>
@@ -277,7 +275,7 @@
         </section>
         <!-- Колонка определяющая секцию контакты -->
         <section class="about-company-contacts">
-          <h2 class="heading-2 uppercase">Контакты</h2>
+          <h2 class="heading-secondary uppercase">Контакты</h2>
           <p class="paragraph-1">Вы можете забрать товар сами,</br>
             заехав в наш офис:</p>
           <img src="img/img-map.jpg" alt="Изображение карты с адресом" />
@@ -366,6 +364,7 @@
     <img src="img/img-map.jpg" alt="Изображение карты с адресом" />
     <input type="image" src="img/icon-close.svg" alt="Иконка закрыть" aria-label="иконка закрыть" />
   </div>
+  <script src="js/index.js"></script>
 </body>
 
 </html>
