@@ -110,21 +110,26 @@
           <h2 class="catalog-filtering paragraph-primary">Фильтр:</h2>
           <!-- Секция фильтрации по цене -->
           <form action="https://echo.htmlacademy.ru" method="get">
-            <fieldset>
+            <fieldset class="catalog-filter-group">
               <legend class="paragraph-secondary">Цена:</legend>
-              <div>
-                <!-- Не знаю как сверстать такой контрол тегом каким-либо -->
-                <input type="range" value="0" max="30000" min="0" step="1" />
+              <div class="range-controls">
+                <div class="scale">
+                  <div class="bar"></div>
+                </div>
+                <div class="toggle toggle-min" tabindex="0"></div>
+                <div class="toggle toggle-max" tabindex="0"></div>
               </div>
-              <div>
-                <label for="filter-price-min" class="visually-hidden">От</label>
-                <input type="number" name="filter-price" id="filter-price-min" />
-                <label for="filter-price-max" class="visually-hidden">До</label>
-                <input type="number" name="filter-price" id="filter-price-max" />
+              <div class="price-controls">
+                <label class="min-price">
+                  <input type="number" name="min-price" value="0">
+                </label>
+                <label class="max-price">
+                  <input type="number" name="max-price" value="30000">
+                </label>
               </div>
             </fieldset>
             <!-- Секция фильтрации по производителю -->
-            <fieldset>
+            <fieldset class="catalog-filter-group">
               <legend class="paragraph-secondary">Производители:</legend>
               <ul class="catalog-filtering-list">
                 <li>
@@ -133,10 +138,8 @@
                     Bosch
                     <span class="check"></span>
                   </label>
-
                 </li>
                 <li>
-
                   <label for="Интерскол" class="checkbox-wrapper">Интерскол
                     <input class="checkbox-input" type="checkbox" name="Интерскол" id="Интерскол" />
                     <span class="check"></span>
@@ -163,7 +166,7 @@
                 </li>
               </ul>
             </fieldset>
-            <fieldset>
+            <fieldset class="catalog-filter-group">
               <!-- Секция фильтрации по питанию -->
               <legend class="paragraph-secondary">Питание:</legend>
               <ul class="catalog-filtering-list">
@@ -183,7 +186,7 @@
                 </li>
               </ul>
             </fieldset>
-            <button type="submit">Показать</button>
+            <a class="button-filtering label" href="#">Показать</a>
           </form>
         </div>
         <!-- DIV для большой колонки для списка товаров -->

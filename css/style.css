@@ -8,6 +8,7 @@
     3.4. Кнопки красные
     3.5 Кнопки прозрачные
     3.6 Кнопки зеленые
+    3.7 Кнопка Показать на фильтрах
   4. Контейнеры
   5. Шапка
     5.1 Логотип в шапке
@@ -283,6 +284,17 @@ body {
   opacity: .5;
 }
 
+/* 3.7 Кнопка Показать на фильтрах */
+.button-filtering {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  text-align: center;
+  padding: 10px 24px;
+  border: 1px solid #E5E5E5;
+  margin-top: 30px;
+}
+
 /* 4. Контейнеры */
 .container {
   display: flex;
@@ -522,6 +534,7 @@ body {
   background-color: #32425C;
 }
 .main-footer .main-logo {
+  width: 220px;
   min-height: 62px;
 }
 
@@ -1141,18 +1154,97 @@ body {
   font-weight: bold;
 }
 
-.catalog-filter-wrapper fieldset {
+.catalog-filter-group {
   border: none;
   padding: 0;
   margin: 0;
 }
 
-.catalog-filter-wrapper fieldset::after {
+.catalog-filter-group::after {
   display: inline-block;
   content: "";
   width: 100%;
   margin: 16px 0;
-  border: 0.5px solid rgba(0, 0, 0, 0.15);
+  border: 0.5px solid #E5E5E5;
+}
+
+.catalog-filter-group:nth-child(3)::after {
+  display: none;
+  content: "";
+  border: none;
+}
+
+.range-controls {
+  position: relative;
+  height: 41px;
+  margin-bottom: 15px;
+  padding-top: 39px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: #F7F3EC;
+  border-radius: 3px;
+}
+
+.range-controls .scale {
+  height: 2px;
+  background: #d7dcde;
+}
+
+.range-controls .bar {
+  width: 80%;
+  height: 2px;
+  background: #00ca74;
+}
+
+.range-controls .toggle {
+  position: absolute;
+  top: 31px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  padding: 0;
+  border: 8px solid #ffffff;
+  background-color: #D7DCDE;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 #cfcfcf;
+  cursor: pointer;
+}
+
+.range-controls .toggle-min {
+  left: 18px;
+}
+
+.range-controls .toggle-max {
+  left: 160px;
+}
+
+.price-controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price-controls input {
+  width: 75px;
+  padding: 10px;
+  text-align: center;
+  color: #283136;
+  border: none;
+  border-radius: 5px;
+  background: #F7F3EC;
+  font-size: inherit;
+  text-align: center;
+}
+
+.price-controls {
+  position: relative;
+}
+
+.price-controls .max-price::before {
+  position: absolute;
+  content: "—";
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .catalog-filter-wrapper ul {
