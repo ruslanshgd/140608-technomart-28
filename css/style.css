@@ -103,8 +103,6 @@ body {
 /* 3. Кнопки */
 /* 3.1 Общий класс для стилизации кнопок в верхнем меню */
 .button-top-menu {
-  font-size: 18px;
-  line-height: 24px;
   background-color: var(--transparent);
   color: var(--white);
   padding-top: 9px;
@@ -186,11 +184,25 @@ body {
   color: var(--basic-greylight);
 }
 
-.button-login {
-  padding-left: 40px;
+.button-login svg {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 4px;
+  
 }
 
-.button-login::before {
+.button-login svg path {
+  transition: var(--basic-transition);
+}
+
+.button-login:hover svg path {
+  fill: var(--basic-grey);
+}
+.button-login:active svg path {
+  fill: var(--basic-greylight);
+}
+
+/* .button-login::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -205,7 +217,7 @@ body {
 
 .button-login:hover::before {
   background-image: url("../img/icon-login-hovered.svg");
-}
+} */
 
 /* 3.4 Кнопки красные */
 .button-red {
@@ -369,19 +381,24 @@ body {
   height: 17px;
   background-image: url("../img/icon-search.svg");
   background-repeat: no-repeat;
-  background-position: 0 0;
   transform: translate(-50%, -50%);
   opacity: .3;
   transition: var(--basic-transition);
+  z-index: 999;
 }
 .search-input-wrapper:hover::before {
   opacity: 1;
 }
 
+.search-input-wrapper:focus-within::before {
+  opacity: 1;
+  background-image: url("../img/icon-search-focused.svg");
+}
+
 .search-input {
+  width: 100%;
+  position: relative;
   padding-left: 40px;
-  font-size: 18px;
-  line-height: 24px;
   color: var(--white);
   background-color: var(--transparent);
   border: none;
@@ -390,10 +407,6 @@ body {
   color: var(--white);
 }
 
-.search-input:active {
-  background-color: var(--transparent);
-  color: rgba(255, 255, 255, 0.3);
-}
 .search-input:focus {
   outline: none;
   border: none;
@@ -427,6 +440,7 @@ body {
   margin-left: 30px;
   font-size: 16px;
   line-height: 24px;
+  color: var(--basic-red);
 }
 
 .phone-wrapper {
@@ -443,6 +457,7 @@ body {
 .phone a {
   text-decoration: none;
   padding-left: 38px;
+  color: var(--basic-red);
 }
 
 .phone a::before {
@@ -1308,8 +1323,4 @@ body {
   padding: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-.basic-red {
-  color: var(--basic-red);
 }
