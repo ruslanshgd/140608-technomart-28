@@ -49,6 +49,7 @@
 /* 2. Типографика */
 body {
   font-family: 'Cuprum', "Arial", sans-serif;
+  font-weight: 400;
 }
 
 .heading-primary {
@@ -201,23 +202,6 @@ body {
 .button-login:active svg path {
   fill: var(--basic-greylight);
 }
-
-/* .button-login::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 19px;
-  width: 20px;
-  height: 17px;
-  background-image: url("../img/icon-login.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  transform: translate(-50%, -50%);
-}
-
-.button-login:hover::before {
-  background-image: url("../img/icon-login-hovered.svg");
-} */
 
 /* 3.4 Кнопки красные */
 .button-red {
@@ -819,7 +803,7 @@ body {
   background-position: center;
 }
 
-.promo-slider-paging .radio-input:checked + .radio {
+.radio-input:checked + .radio {
   background-image: url(../img/controls//slider-on.svg);
 }
 
@@ -996,7 +980,10 @@ body {
 .service-block-slider-content { 
   grid-area: service-block-slider-content;
   position: relative;
+  margin: 0;
+  padding: 0;
   padding-top: 48px;
+  list-style: none;
 }
 
 .service-block-slider-content h2 {
@@ -1128,27 +1115,180 @@ body {
 /* 15. Каталог - Категория товара */
 .catalog-category {
   display: flex;
-  padding: 30px;
   width: 100%;
-  background-color: var(--basic-background);
-  margin-bottom: 20px;
-}
-.catalog-category h1 {
   margin: 0;
+  margin-bottom: 20px;
+  padding: 30px;
+  background-color: var(--basic-background);
   color: #32425C;
 }
 
 /* 16. Каталог - Фильтры и список товаров */
-.grid-container {
+.catalog {
   display: grid;
-  grid-template-columns: 220px 100%;
-  grid-template-rows: 1fr;
-  gap: 1px 1px;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
   grid-template-areas: "catalog-filter-wrapper catalog-wrapper";
 }
 
 .catalog-filter-wrapper { 
   grid-area: catalog-filter-wrapper;
+}
+
+.catalog-filter-wrapper legend {
+  margin: 0;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.catalog-filter-wrapper fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.catalog-filter-wrapper fieldset::after {
+  display: inline-block;
+  content: "";
+  width: 100%;
+  margin: 16px 0;
+  border: 0.5px solid rgba(0, 0, 0, 0.15);
+}
+
+.catalog-filter-wrapper ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.catalog-sorting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F7F3EC;
+  padding: 8px 16px;
+  margin-bottom: 24px;
+}
+
+.catalog-filtering {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F7F3EC;
+  margin: 0;
+  padding: 8px 16px;
+  margin-bottom: 24px;
+}
+
+.catalog-filtering-list li {
+  margin-bottom: 16px;
+}
+
+.checkbox-wrapper {
+  padding-left: 32px;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+
+.checkbox-wrapper .check {
+  position: absolute;
+  left: 10px;
+  width: 24px;
+  height: 23px;
+  background-image: url(../img/controls/checkbox-off.svg);
+  background-repeat: no-repeat;
+  background-size: 24px 23px;
+  background-position: left 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox-input:checked + .check {
+  width: 27px;
+  height: 23px;
+  background-size: 27px 23px;
+  background-position: 2px 0;
+  background-image: url(../img/controls//checkbox-on.svg);
+}
+.checkbox-input:disabled + .check {
+  opacity: .4;
+}
+
+
+/*  */
+.radiobutton-wrapper {
+  padding-left: 32px;
+  position: relative;
+  cursor: pointer;
+}
+
+.radiobutton-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+
+.radiobutton-wrapper .radio {
+  position: absolute;
+  left: 10px;
+  width: 24px;
+  height: 23px;
+  background-image: url(../img/controls/radio-off.svg);
+  background-repeat: no-repeat;
+  background-size: 24px 23px;
+  background-position: left 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radiobutton-input:checked + .radio {
+  width: 23px;
+  height: 23px;
+  background-size: 23px 23px;
+  background-position: 0 0;
+  background-image: url(../img/controls//radio-on.svg);
+}
+.radiobutton-input:disabled + .radio {
+  opacity: .4;
+}
+
+.catalog-sorting h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.catalog-sorting-options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  min-width: 354px;
+  justify-content: space-between;
+}
+.catalog-sorting-options a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, .3);
+  border-bottom: 1px dotted var(--basic-red);
+}
+.catalog-sorting-options a.current {
+  border: none;
+  color: var(--basic-red);
+}
+
+.catalog-sorting-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 39px;
 }
 
 .catalog-wrapper { 
@@ -1159,6 +1299,62 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 220px);
   grid-gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.catalog-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  list-style: none;
+  margin: 48px 0;
+  padding: 0;
+}
+
+.catalog-pagination li {
+  margin-right: 10px;
+}
+
+.catalog-pagination li:last-child {
+  margin-right: 0px;
+}
+
+.catalog-pagination a {
+  padding: 10px 16px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #E5E5E5;
+  border-radius: 2px;
+  transition: var(--basic-transition);
+}
+
+.catalog-pagination a:hover {
+  border: 1px solid var(--basic-greylight);
+}
+.catalog-pagination a:active {
+  border: 1px solid var(--basic-red);
+}
+
+.catalog-pagination a.current {
+  color: var(--white);
+  border: 1px solid var(--basic-red);
+  background-color: var(--basic-red);
+}
+
+.catalog-category-about {
+  padding: 64px 0;
+  background-color: var(--basic-background);
+}
+
+.catalog-category-about h2 {
+  margin: 0;
+  margin-bottom: 24px;
+}
+
+.catalog-category-about p {
+  margin: 0;
 }
 
 .products-list {
@@ -1188,6 +1384,7 @@ body {
   text-decoration: none;
   color: inherit;
   box-shadow: none;
+  text-align: center;
   padding: 32px 32px 20px 32px;
   background-color: var(--white);
   overflow: hidden;
@@ -1260,6 +1457,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-transform: uppercase;
   z-index: 999;
 }
 

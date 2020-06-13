@@ -11,9 +11,8 @@
 </head>
 
 <body>
-  <!-- Шапка сайта -->
   <header class="main-header">
-    <div class="top-menu">
+    <div class="top-menu paragraph-secondary">
       <div class="container">
         <div class="top-menu-wrapper">
           <div class="logo">
@@ -22,7 +21,9 @@
             </a>
           </div>
           <div class="search">
-            <input class="search-input" type="text" placeholder="Поиск:" />
+            <div class="search-input-wrapper">
+              <input class="search-input" type="text" placeholder="Поиск:" />
+            </div>
           </div>
           <div class="bookmarks">
             <a class="button-top-menu button-bookmark">Закладки 0</a>
@@ -43,18 +44,26 @@
       <div class="container-inner">
         <!-- DIV для отступа от верхнего меню и распределение в строку контента -->
         <div class="main-header-info">
-          <i class="store-description basic-red">Интернет-магазин<br />строительных материалов<br />и инструментов
+          <i class="store-description">Интернет-магазин<br />строительных материалов<br />и инструментов
             для ремонта</i>
           <!-- DIV для блока с кнопкой телефона и адреса -->
           <div class="phone-wrapper">
             <div class="phone">
-              <a class="basic-red heading-quaternary bold" href="tel:+7-812-555-05-55">+7 (812) 555-05-55</a>
+              <a class="heading-quaternary bold" href="tel:+7-812-555-05-55">+7 (812) 555-05-55</a>
             </div>
             <span class="label phone-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</span>
           </div>
           <!-- DIV для группировки кнопок -->
           <div class="authorization-wrapper">
-            <a href="#" class="button button-login">Войти</a>
+            <a href="#" class="button button-login">
+              <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.1667 9L5.71429 0.5V6.5H0V11.5H5.71429V17.5L14.1667 9Z" fill="#C5C5C5" />
+                <path
+                  d="M16.1771 15.51H11.3895V17.5H16.1771C18.2514 17.5 19.0381 15.69 19.0619 14.474V3.528C19.0381 2.311 18.2514 0.5 16.1771 0.5H11.3895V2.49H16.1771C16.9762 2.49 17.1219 3.171 17.1391 3.547V14.451C17.1229 14.827 16.9762 15.51 16.1771 15.51Z"
+                  fill="#C5C5C5" />
+              </svg>
+              Войти
+            </a>
             <a href="#" class="button button-registration">Регистрация</a>
           </div>
         </div>
@@ -89,22 +98,20 @@
         <li><a class="heading-fivefold uppercase" href="#">Инструмент</a></li>
         <li><a class="heading-fivefold uppercase">Перфораторы</a></li>
       </ul>
+
     </div>
     <div class="container">
-      <!-- Секция перфораторы -->
-      <section class="catalog-category">
-        <h1 class="heading-secondary uppercase">Перфораторы</h1>
-      </section>
+      <h1 class="catalog-category heading-secondary uppercase">Перфораторы</h1>
     </div>
     <div class="container">
-      <div class="grid-container">
+      <div class="catalog">
         <!-- DIV для колонки с фильтрацией товаров -->
-        <div class="catalog-filter-wrapper">
-          <h2>Фильтр:</h2>
+        <div class="catalog-filter-wrapper uppercase">
+          <h2 class="catalog-filtering paragraph-primary">Фильтр:</h2>
           <!-- Секция фильтрации по цене -->
           <form action="https://echo.htmlacademy.ru" method="get">
             <fieldset>
-              <legend>Цена:</legend>
+              <legend class="paragraph-secondary">Цена:</legend>
               <div>
                 <!-- Не знаю как сверстать такой контрол тегом каким-либо -->
                 <input type="range" value="0" max="30000" min="0" step="1" />
@@ -118,59 +125,78 @@
             </fieldset>
             <!-- Секция фильтрации по производителю -->
             <fieldset>
-              <legend>Производители:</legend>
-              <ul>
+              <legend class="paragraph-secondary">Производители:</legend>
+              <ul class="catalog-filtering-list">
                 <li>
-                  <input type="checkbox" name="bosch" id="bosch" />
-                  <label for="bosch">Bosch</label>
+                  <label class="checkbox-wrapper" for="bosch">
+                    <input class="checkbox-input" type="checkbox" name="bosch" id="bosch" checked />
+                    Bosch
+                    <span class="check"></span>
+                  </label>
+
                 </li>
                 <li>
-                  <input type="checkbox" name="Интерскол" id="Интерскол" />
-                  <label for="Интерскол">Интерскол</label>
+
+                  <label for="Интерскол" class="checkbox-wrapper">Интерскол
+                    <input class="checkbox-input" type="checkbox" name="Интерскол" id="Интерскол" />
+                    <span class="check"></span>
+                  </label>
                 </li>
                 <li>
-                  <input type="checkbox" name="makita" id="makita" />
-                  <label for="makita">Makita</label>
+
+                  <label for="makita" class="checkbox-wrapper">Makita
+                    <input class="checkbox-input" type="checkbox" name="makita" id="makita" checked />
+                    <span class="check"></span>
+                  </label>
                 </li>
                 <li>
-                  <input type="checkbox" name="dewalt" id="dewalt" />
-                  <label for="dewalt">Dewalt</label>
+                  <label for="dewalt" class="checkbox-wrapper">Dewalt
+                    <input class="checkbox-input" type="checkbox" name="dewalt" id="dewalt" />
+                    <span class="check"></span>
+                  </label>
                 </li>
                 <li>
-                  <input type="checkbox" name="hitachi" id="hitachi" />
-                  <label for="hitachi">Hitachi</label>
+                  <label for="hitachi" class="checkbox-wrapper">Hitachi
+                    <input class="checkbox-input" type="checkbox" name="hitachi" id="hitachi" />
+                    <span class="check"></span>
+                  </label>
                 </li>
               </ul>
             </fieldset>
             <fieldset>
               <!-- Секция фильтрации по питанию -->
-              <legend>Питание:</legend>
-              <ul>
+              <legend class="paragraph-secondary">Питание:</legend>
+              <ul class="catalog-filtering-list">
                 <li>
-                  <input type="radio" name="power" id="battery" />
-                  <label for="battery">Аккумуляторные</label>
+                  <label class="radiobutton-wrapper" for="battery">
+                    <input class="radiobutton-input" type="radio" name="power" id="battery" />
+                    Аккумуляторные
+                    <span class="radio"></span>
+                  </label>
                 </li>
                 <li>
-                  <input type="radio" name="power" id="network" />
-                  <label for="network">Сетевые</label>
+                  <label class="radiobutton-wrapper" for="network">
+                    <input class="radiobutton-input" type="radio" name="power" id="network" />
+                    Сетевые
+                    <span class="radio"></span>
+                  </label>
                 </li>
               </ul>
             </fieldset>
             <button type="submit">Показать</button>
           </form>
-
         </div>
         <!-- DIV для большой колонки для списка товаров -->
         <div class="catalog-wrapper">
           <!-- DIV для сортировки по критериям -->
-          <div>
-            <h3>Сортировка</h3>
-            <ul>
-              <li><a href="#">По цене</a></li>
+          <div class="catalog-sorting uppercase">
+            <h3 class="paragraph-primary">Сортировка:</h3>
+            <ul class="catalog-sorting-options">
+              <li><a href="#" class="current">По цене</a></li>
               <li><a href="#">По типу</a></li>
               <li><a href="#">По функционалу</a></li>
             </ul>
-            <div>
+            <div class="catalog-sorting-controls">
               <input type="image" src="img/icon-up-dir.svg" alt="Иконка сортировки" />
               <input type="image" src="img/icon-down-dir.svg" alt="Иконка сортировки" />
             </div>
@@ -223,6 +249,73 @@
                 </div>
                 <img src="img/products/perforator-0004.jpg" alt="Изображение перфоратора" />
                 <h2 class="bold">Перфоратор BOSCH BFG 2000</h2>
+                <p class="new-price">25500 Р.</p>
+                <div class="products-list-item-order">
+                  <button type="button" class="button-green uppercase">Купить</button>
+                  <button type="button" class="button-green-secondary uppercase">В закладки</button>
+                </div>
+              </a>
+            </li>
+            <li class="products-list-item">
+              <a class="products-list-item-link" href="#">
+                <img src="img/products/perforator-0003.jpg" alt="Изображение перфоратора" />
+                <h2>Перфоратор BOSCH BFG 6000</h2>
+                <p>30500 Р.</p>
+                <p class="new-price">25500 Р.</p>
+                <div class="products-list-item-order">
+                  <button type="button" class="button-green uppercase">Купить</button>
+                  <button type="button" class="button-green-secondary uppercase">В закладки</button>
+                </div>
+              </a>
+            </li>
+            <li class="products-list-item">
+              <a class="products-list-item-link" href="#">
+                <div class="badge-wrapper">
+                  <div class="badge-new">New</div>
+                </div>
+                <img src="img/products/perforator-0004.jpg" alt="Изображение перфоратора" />
+                <h2 class="bold">Перфоратор BOSCH BFG 2000</h2>
+                <p class="new-price">25500 Р.</p>
+                <div class="products-list-item-order">
+                  <button type="button" class="button-green uppercase">Купить</button>
+                  <button type="button" class="button-green-secondary uppercase">В закладки</button>
+                </div>
+              </a>
+            </li>
+            <li class="products-list-item">
+              <a class="products-list-item-link" href="#">
+                <div class="badge-wrapper">
+                  <div class="badge-new">New</div>
+                </div>
+                <img src="img/products/perforator-0004.jpg" alt="Изображение перфоратора" />
+                <h2 class="bold">Перфоратор BOSCH BFG 2000</h2>
+                <p class="new-price">25500 Р.</p>
+                <div class="products-list-item-order">
+                  <button type="button" class="button-green uppercase">Купить</button>
+                  <button type="button" class="button-green-secondary uppercase">В закладки</button>
+                </div>
+              </a>
+            </li>
+            <li class="products-list-item">
+              <a class="products-list-item-link" href="#">
+                <img src="img/products/perforator-0003.jpg" alt="Изображение перфоратора" />
+                <h2>Перфоратор BOSCH BFG 6000</h2>
+                <p>30500 Р.</p>
+                <p class="new-price">25500 Р.</p>
+                <div class="products-list-item-order">
+                  <button type="button" class="button-green uppercase">Купить</button>
+                  <button type="button" class="button-green-secondary uppercase">В закладки</button>
+                </div>
+              </a>
+            </li>
+            <li class="products-list-item">
+              <a class="products-list-item-link" href="#">
+                <div class="badge-wrapper">
+                  <div class="badge-new">New</div>
+                </div>
+                <img src="img/products/perforator-0004.jpg" alt="Изображение перфоратора" />
+                <h2 class="bold">Перфоратор BOSCH BFG 2000</h2>
+                <p class="new-price">25500 Р.</p>
                 <div class="products-list-item-order">
                   <button type="button" class="button-green uppercase">Купить</button>
                   <button type="button" class="button-green-secondary uppercase">В закладки</button>
@@ -230,31 +323,31 @@
               </a>
             </li>
           </ul>
-          <!-- DIV для Пагинации -->
-          <div>
-            <ul>
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">Следующая</a></li>
-            </ul>
-          </div>
+          <!-- Пагинация -->
+          <ul class="catalog-pagination">
+            <li><a href="#" class="paragraph-secondary current">1</a></li>
+            <li><a href="#" class="paragraph-secondary">2</a></li>
+            <li><a href="#" class="paragraph-secondary">3</a></li>
+            <li><a href="#" class="paragraph-secondary">Следующая</a></li>
+          </ul>
         </div>
       </div>
     </div>
     <!-- DIV для контейнера сетки -->
-    <div class="container">
-      <section>
-        <h2>Пара слов о перфораторах</h2>
-        <p>
-          Перфоратор — универсальный строительный инструмент. Предназначен для
-          сверления и долбления отверстий в кирпиче, бетоне и камне.<br />Существуют
-          электромеханические и пневматические перфораторы. Современные модели
-          могут выполнять функции дрели, шуруповерта и отбойного молотка.<br />В
-          ассортиментном ряду есть выбор «трехрежимников»: в одном устройстве
-          будут совмещены отбойный молоток и ударная дрель.
-        </p>
-      </section>
+    <div class="catalog-category-about">
+      <div class="container">
+        <section>
+          <h2 class="heading-secondary uppercase">Пара слов о перфораторах</h2>
+          <p class="paragraph-primary">
+            Перфоратор — универсальный строительный инструмент. Предназначен для
+            сверления и долбления отверстий в кирпиче, бетоне и камне.<br />Существуют
+            электромеханические и пневматические перфораторы. Современные модели
+            могут выполнять функции дрели, шуруповерта и отбойного молотка.<br />В
+            ассортиментном ряду есть выбор «трехрежимников»: в одном устройстве
+            будут совмещены отбойный молоток и ударная дрель.
+          </p>
+        </section>
+      </div>
     </div>
   </main>
 
