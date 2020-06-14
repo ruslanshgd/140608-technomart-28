@@ -1280,61 +1280,45 @@ body {
   margin-bottom: 24px;
 }
 
-.catalog-filtering-list li {
+.catalog-filtering-list .filter-option {
   margin-bottom: 16px;
 }
 
-.checkbox-wrapper {
-  padding-left: 32px;
+.filter-option label {
   position: relative;
+  padding-left: 36px;
+  display: block;
   cursor: pointer;
+  user-select: none;
 }
 
-.checkbox-input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  position: absolute;
-}
-
-.checkbox-wrapper .check {
+.checkbox-input + label::before {
+  content: "";
   position: absolute;
   left: 10px;
-  width: 24px;
+  width: 27px;
   height: 23px;
   background-image: url(../img/controls/checkbox-off.svg);
   background-repeat: no-repeat;
-  background-size: 24px 23px;
+  background-size: 27px 23px;
   background-position: left 0;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
-.checkbox-input:checked + .check {
-  width: 27px;
-  height: 23px;
+.checkbox-input:checked + label::before {
   background-size: 27px 23px;
   background-position: 2px 0;
   background-image: url(../img/controls//checkbox-on.svg);
 }
-.checkbox-input:disabled + .check {
+
+.checkbox-input:disabled + label {
   opacity: .4;
+  color: rgba(0, 0, 0, .4);
 }
 
-.radiobutton-wrapper {
-  padding-left: 32px;
-  position: relative;
-  cursor: pointer;
-}
-
-.radiobutton-input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  position: absolute;
-}
-
-.radiobutton-wrapper .radio {
+.radiobutton-input + label::before {
+  content: "";
   position: absolute;
   left: 10px;
   width: 24px;
@@ -1347,15 +1331,17 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.radiobutton-input:checked + .radio {
+.radiobutton-input:checked + label::before {
   width: 23px;
   height: 23px;
   background-size: 23px 23px;
-  background-position: 0 0;
+
   background-image: url(../img/controls//radio-on.svg);
 }
-.radiobutton-input:disabled + .radio {
+
+.radiobutton-input:disabled + label {
   opacity: .4;
+  color: rgba(0, 0, 0, .4);
 }
 
 .catalog-sorting h3 {
@@ -1488,12 +1474,15 @@ body {
   overflow: hidden;
   transition: var(--basic-transition);
 }
+
 .products-list-item-link:hover {
   box-shadow: var(--product-card-shadow);
 }
+
 .products-list-item-link:hover::before {
   opacity: 1;
 }
+
 .products-list-item-link::before {
   content: "";
   position: absolute;
@@ -1512,6 +1501,7 @@ body {
   opacity: 1;
 	transform: translateY(0px);
 }
+
 .products-list-item-order {
   position: absolute;
   width: 135px;
@@ -1715,8 +1705,7 @@ textarea.contacts-input {
 
 .modal-order {
   width: 620px;
-  height: 282px;
-  display: flex;
+  max-height: 263px;
   flex-direction: column;
   overflow: hidden;
   background-color: var(--white);
