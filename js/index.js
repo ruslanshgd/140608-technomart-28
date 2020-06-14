@@ -11,9 +11,9 @@ var mapLink = document.querySelector(".contacts-link-map");
 var mapPopup = document.querySelector(".modal-map");
 var mapClose = mapPopup.querySelector(".modal-close");
 
-// var orderLink = document.querySelector(".modal-order-buy");
-// var orderPopup = document.querySelector(".modal-order");
-// var orderClose = orderPopup.querySelector(".modal-close");
+var orderLink = document.querySelector(".modal-order-buy");
+var orderPopup = document.querySelector(".modal-order");
+var orderClose = orderPopup.querySelector(".modal-close");
 
 try {
   storage = localStorage.getItem("email");
