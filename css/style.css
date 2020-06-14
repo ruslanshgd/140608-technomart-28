@@ -4,7 +4,7 @@
   3. Кнопки
     3.1 Общий класс для стилизации кнопок в верхнем меню
     3.2. Кнопки Закладки, Корзина, Оформить заказ
-    3.3. Кнопки авторизации
+    3.3. Кнопки авторизации, регистрации и профиля
     3.4. Кнопки красные
     3.5 Кнопки прозрачные
     3.6 Кнопки зеленые
@@ -164,15 +164,17 @@ body {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* 3.3 Кнопки авторизации */
+/*3.3. Кнопки авторизации, регистрации и профиля */
 .button-login,
-.button-registration {
+.button-registration,
+.button-profile {
   position: relative;
+  display: flex;
+  align-items: center;
   padding: 10px 24px;
   background-color: var(--white);
   font-size: 21px;
   line-height: 21px;
-  display: block;
   text-decoration: none;
   color: var(--black);
   transition: var(--basic-transition);
@@ -190,8 +192,7 @@ body {
 .button-login svg {
   display: inline-block;
   vertical-align: top;
-  padding-right: 4px;
-  
+  padding-right: 8px;
 }
 
 .button-login svg path {
@@ -201,8 +202,16 @@ body {
 .button-login:hover svg path {
   fill: var(--basic-grey);
 }
+
 .button-login:active svg path {
   fill: var(--basic-greylight);
+}
+
+.button-profile svg:first-child {
+  padding-right: 16px;
+}
+.button-profile svg:last-child {
+  padding-left: 16px;
 }
 
 /* 3.4 Кнопки красные */
@@ -482,8 +491,42 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
 }
+
+.profile-wrapper {
+  padding-top: 8px;
+}
+
 .authorization-wrapper a:first-child {
   margin-right: 10px;
+}
+
+.profile-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 8px;
+  position: relative;
+}
+
+.profile-links a {
+  color: #32425C;
+  text-decoration: none;
+  transition: var(--basic-transition);
+}
+.profile-links a:last-child:before {
+  content: "•";
+  position: absolute;
+  left: 45%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.profile-links a:hover {
+  color: var(--basic-red);
+}
+
+.profile-links a:active {
+  color: var(--basic-greylight);
 }
 
 /* 7. Основная навигация */
