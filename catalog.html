@@ -213,7 +213,7 @@
                 <p>32500 Р.</p>
                 <p class="new-price">25500 Р.</p>
                 <div class="products-list-item-order">
-                  <button type="button" class="button-green uppercase">Купить</button>
+                  <button type="button" class="button-green uppercase modal-order-buy">Купить</button>
                   <button type="button" class="button-green-secondary uppercase">В закладки</button>
                 </div>
               </a>
@@ -228,7 +228,7 @@
                 <p>22500 Р.</p>
                 <p class="new-price">15500 Р.</p>
                 <div class="products-list-item-order">
-                  <button type="button" class="button-green uppercase">Купить</button>
+                  <button type="button" class="button-green uppercase modal-order-buy">Купить</button>
                   <button type="button" class="button-green-secondary uppercase">В закладки</button>
                 </div>
               </a>
@@ -240,7 +240,7 @@
                 <p>30500 Р.</p>
                 <p class="new-price">25500 Р.</p>
                 <div class="products-list-item-order">
-                  <button type="button" class="button-green uppercase">Купить</button>
+                  <button type="button" class="button-green uppercase modal-order-buy">Купить</button>
                   <button type="button" class="button-green-secondary uppercase">В закладки</button>
                 </div>
               </a>
@@ -254,7 +254,7 @@
                 <h2 class="bold">Перфоратор BOSCH BFG 2000</h2>
                 <p class="new-price">25500 Р.</p>
                 <div class="products-list-item-order">
-                  <button type="button" class="button-green uppercase">Купить</button>
+                  <button type="button" class="button-green uppercase modal-order-buy">Купить</button>
                   <button type="button" class="button-green-secondary uppercase">В закладки</button>
                 </div>
               </a>
@@ -266,7 +266,7 @@
                 <p>30500 Р.</p>
                 <p class="new-price">25500 Р.</p>
                 <div class="products-list-item-order">
-                  <button type="button" class="button-green uppercase">Купить</button>
+                  <button type="button" class="button-green uppercase modal-order-buy">Купить</button>
                   <button type="button" class="button-green-secondary uppercase">В закладки</button>
                 </div>
               </a>
@@ -280,7 +280,7 @@
                 <h2 class="bold">Перфоратор BOSCH BFG 2000</h2>
                 <p class="new-price">25500 Р.</p>
                 <div class="products-list-item-order">
-                  <button type="button" class="button-green uppercase">Купить</button>
+                  <button type="button" class="button-green uppercase modal-order-buy">Купить</button>
                   <button type="button" class="button-green-secondary uppercase">В закладки</button>
                 </div>
               </a>
@@ -294,7 +294,7 @@
                 <h2 class="bold">Перфоратор BOSCH BFG 2000</h2>
                 <p class="new-price">25500 Р.</p>
                 <div class="products-list-item-order">
-                  <button type="button" class="button-green uppercase">Купить</button>
+                  <button type="button" class="button-green uppercase modal-order-buy">Купить</button>
                   <button type="button" class="button-green-secondary uppercase">В закладки</button>
                 </div>
               </a>
@@ -306,7 +306,7 @@
                 <p>30500 Р.</p>
                 <p class="new-price">25500 Р.</p>
                 <div class="products-list-item-order">
-                  <button type="button" class="button-green uppercase">Купить</button>
+                  <button type="button" class="button-green uppercase modal-order-buy">Купить</button>
                   <button type="button" class="button-green-secondary uppercase">В закладки</button>
                 </div>
               </a>
@@ -320,7 +320,7 @@
                 <h2 class="bold">Перфоратор BOSCH BFG 2000</h2>
                 <p class="new-price">25500 Р.</p>
                 <div class="products-list-item-order">
-                  <button type="button" class="button-green uppercase">Купить</button>
+                  <button type="button" class="button-green uppercase modal-order-buy">Купить</button>
                   <button type="button" class="button-green-secondary uppercase">В закладки</button>
                 </div>
               </a>
@@ -353,7 +353,6 @@
       </div>
     </div>
   </main>
-
   <!-- Подвал сайта -->
   <footer class="main-footer">
     <div class="footer-navigation-wrapper">
@@ -428,20 +427,20 @@
     </div>
 
   </footer>
-  <!-- DIV для модального окна -->
-  <div class="visually-hidden">
+  <!-- Модальное окно -->
+  <section class="modal modal-order">
+    <input class="modal-close" type="image" src="img/icon-close.svg" alt="Иконка закрыть" aria-label="иконка закрыть" />
     <!-- DIV для блока контента -->
-    <div>
-      <input type="image" src="img/icon-close.svg" alt="Иконка закрыть" aria-label="иконка закрыть" />
+    <div class="modal-order-content">
       <img src="img/icon-mark.svg" alt="Иконка с галочкой" />
-      <h2>Товар добавлен в корзину!</h2>
+      <h2 class="heading-tertiary">Товар добавлен в корзину!</h2>
     </div>
     <!-- DIV для блока с кнопками -->
-    <div>
-      <button type="button">Оформить заказ</button>
-      <button type="button">Продолжить покупки</button>
+    <div class="modal-order-controls">
+      <a href="#" type="button" class="button-red uppercase">Оформить заказ</a>
+      <a href="#" type="button" class="uppercase">Продолжить покупки</a>
     </div>
-  </div>
+  </section>
   <script src="js/index.js"></script>
 </body>
 
