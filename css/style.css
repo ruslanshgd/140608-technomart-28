@@ -919,7 +919,7 @@ body {
 
 .service-block-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 1fr 283px;
   grid-template-areas: "service-block-content service-block-content" "service-block-slider service-block-slider";
   width: 100%;
@@ -1617,7 +1617,7 @@ body {
   color: var(--basic-black);
   background-color: var(--white);
   border-top: 7px solid var(--basic-red);
-  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 40px 20px rgba(0, 0, 0, .15);
 }
 
 .modal-show {
@@ -1684,7 +1684,6 @@ textarea.contacts-input {
   background-color: #F4F4F4;
 }
 
-
 .modal-close {
   position: absolute;
   top: 12px;
@@ -1695,16 +1694,13 @@ textarea.contacts-input {
   background-color: transparent;
   border: 0;
   cursor: pointer;
+  z-index: 3;
 }
 
 .modal-map {
-  width: 766px;
-  height: 560px;
-  border: 7px solid white;
-}
-
-.modal-map img {
-  display: block;
+  width: 943px;
+  height: 449px;
+  overflow: hidden;
 }
 
 .modal-map iframe {
