@@ -366,7 +366,7 @@
             <p class="paragraph-primary">Вы можете забрать товар сами,<br />
               заехав в наш офис:</p>
             <img src="img/img-map.jpg" alt="Изображение карты с адресом" />
-            <a href="#" class="button-red uppercase">Заблудились? Напишите нам!</a>
+            <a href="#" class="contacts-link button-red uppercase">Заблудились? Напишите нам!</a>
           </section>
         </div>
       </div>
@@ -448,10 +448,37 @@
 
   </footer>
   <!-- DIV для модального окна -->
-  <div class="visually-hidden">
+  <section class="modal modal-map visually-hidden">
     <img src="img/img-map.jpg" alt="Изображение карты с адресом" />
-    <input type="image" src="img/icon-close.svg" alt="Иконка закрыть" aria-label="иконка закрыть" />
-  </div>
+    <input class="modal-close" type="image" src="img/icon-close.svg" alt="Иконка закрыть" aria-label="иконка закрыть" />
+  </section>
+  <section class="modal modal-contacts">
+    <input class="modal-close" type="image" src="img/icon-close.svg" alt="Иконка закрыть" aria-label="иконка закрыть" />
+    <form class="contacts-form" action="https://echo.htmlacademy.ru" method="post">
+      <div class="modal-contacts-wrapper">
+        <div class="contacts-input-group">
+          <p>
+            <label class="paragraph-secondary" for="contacts-name">Ваше имя:</label>
+            <input class="contacts-input contacts-name paragraph-primary" id="contacts-name" type="text" name="name"
+              placeholder="Имя Фамилия" required>
+          </p>
+          <p>
+            <label class="paragraph-secondary" for="contacts-email">Ваше e-mail:</label>
+            <input class="contacts-input contacts-email paragraph-primary" id="contacts-email" type="email" name="email"
+              placeholder="email@example.com" required>
+          </p>
+        </div>
+        <p>
+          <label class="paragraph-secondary" for="contacts-text">Текст письма:</label>
+          <textarea class="contacts-input paragraph-primary" id="contacts-text" rows="4" name="text"
+            placeholder="В свободной форме"></textarea>
+        </p>
+      </div>
+      <div class="contacts-action">
+        <button class="button-red label uppercase" type="submit">Отправить</button>
+      </div>
+    </form>
+  </section>
   <script src="js/index.js"></script>
 </body>
 

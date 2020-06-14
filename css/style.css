@@ -24,7 +24,8 @@
   14. Каталог - Хлебные крошки
   15. Каталог - Категория товара
   16. Каталог - Фильтры и список товаров
-  Вспомогательные классы
+  17. Модальные окна
+  18. Вспомогательные классы
 */
 
 /* 1. Переменные */
@@ -1603,7 +1604,114 @@ body {
   z-index: 999;
 }
 
-/* Вспомогательные классы */
+/* 17. Модальные окна */
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  display: none;
+  color: var(--basic-black);
+  background-color: var(--white);
+  border-top: 7px solid var(--basic-red);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+}
+
+.modal-show {
+  display: block;
+}
+
+.modal-contacts {
+  top: 120px;
+  bottom: auto;
+  width: 620px;
+}
+.modal-contacts-wrapper {
+  padding: 50px 80px 36px 80px;
+}
+.modal-contacts-wrapper p {
+  margin: 0;
+}
+
+.contacts-input-group {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.contacts-input-group p {
+  width: 220px;
+  margin-right: 20px;
+}
+.contacts-input-group p:last-child {
+  margin-right: 0px;
+}
+
+.contacts-input {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 2px solid var(--basic-greylight);
+  border-radius: 2px;
+  padding: 7px 12px;
+}
+
+.contacts-input-group label {
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+textarea.contacts-input {
+  margin: 0;
+  margin-top: 12px;
+  resize: none;
+}
+
+.contacts-form button {
+  outline: none;
+  border: none;
+  display: block;
+  width: 100%;
+}
+
+.contacts-action {
+  padding: 37px 80px;
+  background-color: #F4F4F4;
+}
+
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 21px;
+  height: 21px;
+  font-size: 0;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.modal-map {
+  width: 766px;
+  height: 560px;
+  border: 7px solid white;
+}
+
+.modal-map img {
+  display: block;
+}
+
+.modal-map iframe {
+  border: none;
+}
+
+/* 18. Вспомогательные классы */
 .visually-hidden {
   position: absolute;
   width: 1px;
