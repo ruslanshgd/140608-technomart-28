@@ -32,10 +32,13 @@
 :root {
   --basic-background: #F1F5F7;
   --basic-grey: #293449;
-  --basic-grey-dark: #161D29;
+  --basic-grey-light: #32425C;
+  --basic-grey-dark: #1D2739;
+  --basic-grey-darker: #212A3A;
   --basic-greylight: #C5C5C5;
   --basic-green: #63A63E;
   --basic-red: #EE3643;
+  --basic-border: #E5E5E5;
   --special-yellow: #FFBF47;
   --special-blue: #3BBCE3;
   --special-lilac: #DC91D8;
@@ -45,7 +48,18 @@
   --black: #000000;
   --transparent: transparent;
   --basic-transition: all .24s ease;
+  --filter-background: #F7F3EC;
+  --button-green-bottom-border: #367315;
+  --button-green-active: #518534;
+  --button-green-secondary-border: 3px solid #63A63E;
   --product-card-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  --footer-link-secondary: #FFD180;
+  --promo-sales-background: #8ED78F;
+  --popular-block-background: #F9F5F0;
+  --product-item-border: #EAEAEA;
+  --filter-range-background: #d7dcde;
+  --filter-range-bar-background: #00ca74;
+  --modal-contacts-action-background: #F4F4F4;
 }
 
 /* 2. Типографика */
@@ -75,11 +89,13 @@ body {
 }
 
 .heading-fivefold {
+  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 
 .paragraph-primary {
+  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 13px;
   line-height: 24px;
 }
@@ -151,6 +167,10 @@ body {
   opacity: 1;
 }
 
+.cart-filled {
+  background-color: var(--basic-red);
+}
+
 .button-order {
   background-color: var(--basic-green);
   transition: var(--basic-transition);
@@ -219,7 +239,7 @@ body {
   background-color: var(--basic-red);
   font-size: 14px;
   line-height: 18px;
-  padding: 10px 40px;
+  padding: 10px 16px;
   text-decoration: none;
   color: var(--white);
   text-align: center;
@@ -250,17 +270,15 @@ body {
  /* 3.6 Кнопки зеленые */
 .button-green {
   cursor: pointer;
-  width: 135px;
   background-color: var(--basic-green);
   font-size: 14px;
   line-height: 18px;
   padding: 10px 24px;
   text-decoration: none;
   color: var(--white);
-  outline: none;
   border-radius: 2px;
   border: none;
-  border-bottom: 3px solid #367315;
+  border-bottom: 3px solid var(--button-green-bottom-border);
   transition: var(--basic-transition);
 }
 
@@ -268,27 +286,25 @@ body {
   background-color: var(--successful);
 }
 .button-green:active {
-  background-color: #518534;
+  background-color: var(--button-green-active);
 }
 
 .button-green-secondary {
   cursor: pointer;
-  width: 135px;
   background-color: var(--transparent);
   font-size: 14px;
   line-height: 18px;
   padding: 10px 24px;
   text-decoration: none;
-  color: #32425C;
-  outline: none;
+  color: var(--basic-grey-light);
   border: none;
   border-radius: 2px;
-  border: 3px solid #63A63E;
+  border: var(--button-green-secondary-border);
   transition: var(--basic-transition);
 }
 
 .button-green-secondary:hover {
-  border-color: #32425C;
+  border-color: var(--basic-grey-light);
 }
 .button-green-secondary:active {
   opacity: .5;
@@ -296,18 +312,22 @@ body {
 
 /* 3.7 Кнопка Показать на фильтрах */
 .button-filtering {
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 13px;
+  line-height: 18px;
   text-decoration: none;
   color: inherit;
   display: block;
   text-align: center;
   padding: 10px 24px;
-  border: 1px solid #E5E5E5;
+  border: 1px solid var(--basic-border);
+  background: none;
+  width: 100%;
   margin-top: 30px;
 }
 
 /* 4. Контейнеры */
 .container {
-  display: flex;
   width: 100%;
   max-width: 940px;
   margin: 0 auto;
@@ -364,6 +384,7 @@ body {
 /* 5.1 Логотип в шапке */
 .main-logo {
   display: flex;
+  align-items: center;
   background-color: var(--basic-red);
   height: 42px;
   border-bottom: 5px solid rgba(0, 0, 0, 0.24);
@@ -376,6 +397,10 @@ body {
 .search-input-wrapper {
   display: flex;
   position: relative;
+}
+.search-input-wrapper form {
+  display: inherit;
+  width: 100%;
 }
 
 .search-input-wrapper::before {
@@ -442,10 +467,10 @@ body {
 }
 
 .store-description {
+  font-size: 16px;
+  line-height: 23px;
   margin-top: 2px;
   margin-left: 30px;
-  font-size: 16px;
-  line-height: 24px;
   color: var(--basic-red);
 }
 
@@ -488,7 +513,6 @@ body {
   padding-top: 8px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: flex-start;
 }
 
@@ -509,7 +533,7 @@ body {
 }
 
 .profile-links a {
-  color: #32425C;
+  color: var(--basic-grey-light);
   text-decoration: none;
   transition: var(--basic-transition);
 }
@@ -536,7 +560,7 @@ body {
   height: 60px;
   max-height: 60px;
   display: flex;
-  background-color: #32425c;
+  background-color: var(--basic-grey-light);
 }
 
 .site-navigation {
@@ -569,13 +593,13 @@ body {
 }
 
 .site-navigation a:active {
-  background-color: #1d2739;
+  background-color: var(--basic-grey-dark);
   color: rgba(255, 255, 255, 0.5);
 }
 
 /* 8. Футер */
 .main-footer {
-  background-color: #32425C;
+  background-color: var(--basic-grey-light);
 }
 .main-footer .main-logo {
   width: 220px;
@@ -612,7 +636,7 @@ body {
 }
 
 .footer-navigation a {
-  color: var(--white);
+  color: var(--basic-background);
   text-decoration: none;
   transition: var(--basic-transition);
 }
@@ -630,12 +654,17 @@ body {
 }
 
 .footer-navigation-secondary a {
-  color: #FFD180;
+  color: var(--footer-link-secondary);
 }
 
 .footer-address {
   color: var(--white);
   margin-right: 72px;
+}
+
+.footer-address a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .footer-contacts {
@@ -674,7 +703,7 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: #212A3A;
+  background-color: var(--basic-grey-darker);
   color: inherit;
 }
 
@@ -704,7 +733,7 @@ body {
 }
 
 .footer-contacts-list a {
-  color: #FFD180;
+  color: var(--footer-link-secondary);
   text-decoration: none;
 }
 .footer-contacts-list a:hover {
@@ -827,7 +856,9 @@ body {
 
 .promo-slider-action {
   grid-area: slider-action;
+  display: contents;
 }
+
 
 .promo-slider-paging {
   grid-area: slider-paging;
@@ -875,7 +906,7 @@ body {
 
 .promo-list-sales { 
   grid-area: sales;
-  background-color: #8ED78F;
+  background-color: var(--promo-sales-background);
  }
  .promo-list-delivery { 
   grid-area: delivery;
@@ -889,16 +920,24 @@ body {
   margin-top: 60px;
 }
 
-.popular-products-header {
+.popular-products-header,
+.popular-brands-header {
   display: grid;
   grid-template-columns: 1fr 220px;
   padding: 30px;
-  background-color: #F9F5F0;
+  background-color: var(--popular-block-background);
   margin-bottom: 20px;
 }
 
-.popular-products-header h2 {
+.popular-products-header h2,
+.popular-brands-header h2 {
+  color: var(--basic-grey-light);
   margin: 0;
+}
+
+.popular-products-header a,
+.popular-brands-header a {
+  align-self: flex-start;
 }
 
 /* 11. Главная - Блок: Популярные производители */
@@ -906,18 +945,6 @@ body {
   display: grid;
   margin-top: 70px;
   margin-bottom: 70px;
-}
-
-.popular-brands-header {
-  display: grid;
-  grid-template-columns: 1fr 220px;
-  padding: 30px;
-  background-color: #F9F5F0;
-  margin-bottom: 20px;
-}
-
-.popular-brands-header h2 {
-  margin: 0;
 }
 
 .popular-brands-list {
@@ -934,7 +961,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #EAEAEA;
+  border: 1px solid var(--product-item-border);
 }
 .popular-brands-list-item-link {
   display: flex;
@@ -992,7 +1019,6 @@ body {
 
 .service-block-slider-controls-list {
   position: relative;
-  flex-direction: column;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1021,16 +1047,16 @@ body {
   padding: 16px 20px;
   color: var(--white);
   text-decoration: none;
-  background-color: #32425C;
+  background-color: var(--basic-grey-light);
   transition: var(--basic-transition);
   cursor: pointer;
 }
 .service-block-slider-controls-list label:hover {
-  background-color: #293449;
+  background-color: var(--basic-grey);
 }
 
 .service-block-slider-controls-list input:checked + label {
-  color:#32425C ;
+  color:var(--basic-grey-light) ;
   background-color: var(--white);
 }
 
@@ -1048,7 +1074,7 @@ body {
 .service-block-slider-content-item h2 {
   margin: 0;
   margin-bottom: 30px;
-  color: #32425C;
+  color: var(--basic-grey-light);
 }
 
 .service-block-slider-content-item p {
@@ -1163,7 +1189,7 @@ body {
   content: "";
   position: absolute;
   top: 50%;
-  left: -28px;
+  left: -21px;
   width: 8px;
   height: 12px;
   background-image: url("../img/icon-right-small.svg");
@@ -1178,13 +1204,11 @@ body {
 
 /* 15. Каталог - Категория товара */
 .catalog-category {
-  display: flex;
-  width: 100%;
   margin: 0;
   margin-bottom: 20px;
   padding: 30px;
   background-color: var(--basic-background);
-  color: #32425C;
+  color: var(--basic-grey-light);
 }
 
 /* 16. Каталог - Фильтры и список товаров */
@@ -1200,6 +1224,9 @@ body {
 }
 
 .catalog-filter-wrapper legend {
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 17px;
+  line-height: 30px;
   margin: 0;
   margin-bottom: 15px;
   font-weight: bold;
@@ -1213,10 +1240,11 @@ body {
 
 .catalog-filter-group::after {
   display: inline-block;
+  vertical-align: middle;
   content: "";
   width: 100%;
   margin: 16px 0;
-  border: 0.5px solid #E5E5E5;
+  border: 0.5px solid var(--basic-border);
 }
 
 .catalog-filter-group:nth-child(3)::after {
@@ -1232,19 +1260,19 @@ body {
   padding-top: 39px;
   padding-right: 20px;
   padding-left: 20px;
-  background-color: #F7F3EC;
+  background-color: var(--filter-background);
   border-radius: 3px;
 }
 
 .range-controls .scale {
   height: 2px;
-  background: #d7dcde;
+  background: var(--filter-range-background);
 }
 
 .range-controls .bar {
   width: 80%;
   height: 2px;
-  background: #00ca74;
+  background: var(--filter-range-bar-background);
 }
 
 .range-controls .toggle {
@@ -1254,8 +1282,8 @@ body {
   width: 4px;
   height: 4px;
   padding: 0;
-  border: 8px solid #ffffff;
-  background-color: #D7DCDE;
+  border: 8px solid var(--white);
+  background-color: var(--filter-range-background);
   border-radius: 50%;
   box-shadow: 0 2px 1px 0 #cfcfcf;
   cursor: pointer;
@@ -1270,24 +1298,23 @@ body {
 }
 
 .price-controls {
+  position: relative;
   display: flex;
   justify-content: space-between;
+  font-family: "PT Sans", "Arial", sans-serif;
 }
 
 .price-controls input {
   width: 75px;
   padding: 10px;
   text-align: center;
-  color: #283136;
+  color: var(--black);
   border: none;
   border-radius: 5px;
-  background: #F7F3EC;
-  font-size: inherit;
+  background: var(--filter-background);
+  font-size: 17px;
+  line-height: 18px;
   text-align: center;
-}
-
-.price-controls {
-  position: relative;
 }
 
 .price-controls .max-price::before {
@@ -1308,19 +1335,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #F7F3EC;
+  background-color: var(--filter-background);
   padding: 8px 16px;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .catalog-filtering {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #F7F3EC;
+  font-size: 13px;
+  line-height: 18px;
+  background-color: var(--filter-background);
   margin: 0;
   padding: 8px 16px;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 
 .catalog-filtering-list .filter-option {
@@ -1328,9 +1357,12 @@ body {
 }
 
 .filter-option label {
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 19px;
+  display: block;
   position: relative;
   padding-left: 36px;
-  display: block;
   cursor: pointer;
   user-select: none;
 }
@@ -1388,6 +1420,9 @@ body {
 }
 
 .catalog-sorting h3 {
+  font-family: 'Cuprum', "Arial", sans-serif;
+  font-size: 13px;
+  line-height: 18px;
   margin: 0;
   padding: 0;
 }
@@ -1398,10 +1433,23 @@ body {
   padding: 0;
   display: flex;
   align-items: center;
-  min-width: 354px;
   justify-content: space-between;
+  margin-left: auto;
+  margin-right: 48px;
 }
+
+.catalog-sorting-options li {
+  margin-right: 70px;
+}
+
+.catalog-sorting-options li:last-child {
+  margin-right: 0;
+}
+
 .catalog-sorting-options a {
+  font-family: 'PT Sans', "Arial", sans-serif;
+  font-size: 13px;
+  line-height: 18px;
   text-decoration: none;
   color: rgba(0, 0, 0, .3);
   border-bottom: 1px dotted var(--basic-red);
@@ -1452,7 +1500,7 @@ body {
   padding: 10px 16px;
   text-decoration: none;
   color: inherit;
-  border: 1px solid #E5E5E5;
+  border: 1px solid var(--basic-border);
   border-radius: 2px;
   transition: var(--basic-transition);
 }
@@ -1497,24 +1545,37 @@ body {
 .products-list-item {
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid #EAEAEA;
+  border: 1px solid var(--product-item-border);
   vertical-align: top;
 }
 
 .products-list-item-link {
+  cursor: pointer;
   box-sizing: border-box;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   text-decoration: none;
   color: inherit;
-  box-shadow: none;
   text-align: center;
   padding: 32px 32px 20px 32px;
   background-color: var(--white);
   overflow: hidden;
+  transition: var(--basic-transition);
+}
+
+.products-list-item-link::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56%;
+  background-color: rgba(255,255,255, 1);
+  opacity: 0;
+  z-index: 1;
   transition: var(--basic-transition);
 }
 
@@ -1526,41 +1587,25 @@ body {
   opacity: 1;
 }
 
-.products-list-item-link::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 56%;
-  background-color: rgba(255,255,255, 1);
-  opacity: 0;
-  z-index: 1;
-  transition: var(--basic-transition);
-}
-
 .products-list-item-link:hover .products-list-item-order {
   opacity: 1;
-	transform: translateY(0px);
+  transform: translateY(0px);
 }
 
 .products-list-item-order {
-  position: absolute;
+  display: flex;
   width: 135px;
-  height: 100%;
-  padding-top: 20px;
-  display: block;
-  justify-content: flex-start;
   flex-direction: column;
+  position: absolute;
+  padding-top: 20px;
   z-index: 2;
   color: inherit;
   opacity: 0;
   transform: translateY(30px);
-  transition: 0.5s;
+  transition: var(--basic-transition);
 }
 
-.products-list-item-order button:first-child {
+.products-list-item-order a:first-child {
   margin-bottom: 10px;
 }
 
@@ -1574,6 +1619,7 @@ body {
   right: -70px;
   top: 10px;
 }
+
 .badge-new {
   position: relative;
   right: 0px;
@@ -1593,13 +1639,15 @@ body {
 }
 
 .products-list-item h2 {
-  margin-top: 38px;
-  margin-bottom: 8px;
+  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 18px;
   line-height: 20px;
+  margin-top: 38px;
+  margin-bottom: 8px;
 }
 
 .products-list-item-link p {
+  font-family: "PT Sans", "Arial", sans-serif;
   margin: 0;
   font-size: 17px;
   line-height: 18px;
@@ -1611,7 +1659,7 @@ body {
 .products-list-item-link .new-price {
   position: relative;
   margin-top: auto;
-  width: 55px;
+  width: 64px;
   padding: 10px 32px;
   color: var(--white);
   text-decoration: none;
@@ -1628,18 +1676,6 @@ body {
   height: 0;
   border: 19px solid var(--white);
   border-left-color: var(--basic-red);
-}
-
-.products-list-item .products-list-item-link:hover::after {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background-color: var(--white);
-  z-index: 10;
 }
 
 /* 17. Модальные окна */
@@ -1703,6 +1739,7 @@ body {
 .contacts-input-group label {
   display: inline-block;
   margin-bottom: 12px;
+  vertical-align: middle;
 }
 
 textarea.contacts-input {
@@ -1720,13 +1757,13 @@ textarea.contacts-input {
 
 .contacts-action {
   padding: 37px 80px;
-  background-color: #F4F4F4;
+  background-color: var(--modal-contacts-action-background);
 }
 
 .modal-close {
   position: absolute;
   top: 12px;
-  right: 12px;
+  right: 16px;
   width: 21px;
   height: 21px;
   font-size: 0;
@@ -1746,7 +1783,7 @@ textarea.contacts-input {
   border: none;
 }
 
-.modal-order {
+.modal-orders {
   width: 620px;
   max-height: 263px;
   flex-direction: column;
