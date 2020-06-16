@@ -136,7 +136,6 @@ body {
 /* 3.2 Кнопки Закладки, Корзина, Оформить заказ */
 .button-bookmark,
 .button-cart {
-  padding-left: 43px;
   position: relative;
   background-color: var(--transparent);
   transition: var(--basic-transition);
@@ -151,7 +150,7 @@ body {
   content: "";
   position: absolute;
   top: 50%;
-  left: 24px;
+  left: 19px;
   width: 14px;
   height: 16px;
   background-image: url("../img/icon-bookmark.svg");
@@ -162,8 +161,15 @@ body {
   transition: var(--basic-transition);
 }
 
+.button-bookmark::before {
+  left: 13px;
+}
+
+.button-bookmark {
+  padding-left: 29px;
+}
 .button-cart {
-  padding-left: 49px;
+  padding-left: 35px;
 }
 
 .button-cart::before {
@@ -284,7 +290,7 @@ body {
   background-color: var(--basic-green);
   font-size: 14px;
   line-height: 18px;
-  padding: 10px 24px;
+  padding: 8px 24px;
   text-decoration: none;
   color: var(--white);
   border-radius: 2px;
@@ -305,7 +311,7 @@ body {
   background-color: var(--transparent);
   font-size: 14px;
   line-height: 18px;
-  padding: 10px 24px;
+  padding: 8px 24px;
   text-decoration: none;
   color: var(--basic-grey-light);
   border: none;
@@ -334,7 +340,7 @@ body {
   border: 1px solid var(--basic-border);
   background: none;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 /* 4. Контейнеры */
@@ -361,7 +367,7 @@ body {
 
 .top-menu-wrapper {
   display: grid;
-  grid-template-columns: 220px 1fr 150px 150px 150px;
+  grid-template-columns: 220px 1fr 150px 136px 150px;
   grid-template-rows: 42px;
   grid-template-areas: "logo search bookmarks order cart";
   width: 100%;
@@ -482,12 +488,12 @@ body {
   line-height: 24px;
   margin-top: 3px;
   margin-left: 30px;
+  margin-right: 48px;
   color: var(--basic-red);
 }
 
 .phone-wrapper {
   margin-top: 4px;
-  margin-left: 50px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -527,6 +533,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  margin-left: 19px;
 }
 
 .profile-wrapper {
@@ -825,7 +832,7 @@ body {
   grid-area: slider;
   overflow: hidden;
   position: relative;
-  padding: 20px 25px;
+  padding: 21px 25px 28px 24px;
  }
 
 .promo-slider-wrapper {
@@ -873,21 +880,20 @@ body {
 
 .promo-slider-footer {
   display: grid;
-  grid-template-columns: 192px 1fr 192px;
-  grid-template-rows: 1fr;
+  grid-template-columns: 184px 1fr 192px;
+  grid-template-rows: 40px;
   grid-template-areas: "slider-action slider-paging .";
   grid-area: slider-footer;
 }
 
 .promo-slider-action {
   grid-area: slider-action;
+  display: grid;
 }
 
 .promo-slider-action a {
-  display: block;
-  margin-bottom: 20px;
+  display: grid;
   width: 160px;
-
 }
 
 .promo-slider-paging {
@@ -895,6 +901,7 @@ body {
   align-self: center;
   justify-self: center;
   position: relative;
+  margin-top: 14px;
 }
 
 .promo-slider-paging .radio-wrapper {
@@ -964,6 +971,7 @@ body {
   color: var(--basic-grey-light);
   margin: 0;
   align-self: center;
+  letter-spacing: -0.72px;
 }
 
 .popular-products-header a,
@@ -1035,6 +1043,10 @@ body {
   margin-bottom: 24px;
 }
 
+.service-block-content h2 {
+  letter-spacing: -0.72px;
+}
+
 .service-block-slider {
   display: grid;
   grid-template-columns: 240px 80px 1fr;
@@ -1075,7 +1087,8 @@ body {
 }
 .service-block-slider-controls-list label {
   display: block;
-  padding: 16px 20px;
+  padding: 16px 22px;
+  letter-spacing: 0.84px;
   color: var(--white);
   text-decoration: none;
   background-color: var(--basic-grey-light);
@@ -1105,6 +1118,7 @@ body {
 .service-block-slider-content-item h2 {
   margin: 0;
   margin-bottom: 29px;
+  letter-spacing: -0.72px;
   color: var(--basic-grey-light);
 }
 
@@ -1150,6 +1164,7 @@ body {
 .contacts-content h2 {
   margin: 0;
   margin-bottom: 24px;
+  letter-spacing: -1px;
  }
  
 .about-content p,
@@ -1276,29 +1291,42 @@ body {
   border: none;
   padding: 0;
   margin: 0;
-  margin-top: 5px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.catalog-filter-group:nth-child(2) {
+  margin-top: 42px;
 }
 
-.catalog-filter-group::after {
-  display: inline-block;
-  vertical-align: middle;
+.catalog-filter-group:nth-child(3) {
+  margin-top: 28px;
+}
+
+.catalog-filter-group:nth-child(3) legend {
+  margin-bottom: 22px;
+}
+
+.price-controls::after {
+  position: absolute;
   content: "";
+  bottom: -28px;
   width: 100%;
-  margin: 16px 0;
   border: 0.5px solid var(--basic-border);
 }
 
-.catalog-filter-group:nth-child(3)::after {
-  display: none;
+.catalog-filter-group:nth-child(2)::after {
+  position: absolute;
   content: "";
-  border: none;
+  width: 100%;
+  bottom: -11px;
+  border: 0.5px solid var(--basic-border);
 }
 
 .range-controls {
   position: relative;
   height: 41px;
-  margin-bottom: 6px;
-  padding-top: 39px;
+  margin-bottom: 7px;
+  padding-top: 37px;
   padding-right: 20px;
   padding-left: 20px;
   background-color: var(--filter-background);
@@ -1318,7 +1346,7 @@ body {
 
 .range-controls .toggle {
   position: absolute;
-  top: 31px;
+  top: 27px;
   left: 0;
   width: 4px;
   height: 4px;
@@ -1370,6 +1398,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-top: 3px;
 }
 
 .catalog-sorting {
@@ -1392,6 +1421,7 @@ body {
   margin: 0;
   padding: 8px 17px;
   margin-bottom: 16px;
+  position: relative;
 }
 
 .catalog-filtering-list .filter-option {
@@ -1412,7 +1442,7 @@ body {
 .checkbox-input + label::before {
   content: "";
   position: absolute;
-  left: 10px;
+  left: 11px;
   width: 27px;
   height: 23px;
   background-image: url(../img/controls/checkbox-off.svg);
@@ -1437,7 +1467,7 @@ body {
 .radiobutton-input + label::before {
   content: "";
   position: absolute;
-  left: 10px;
+  left: 12px;
   width: 24px;
   height: 23px;
   background-image: url(../img/controls/radio-off.svg);
@@ -1481,7 +1511,7 @@ body {
 }
 
 .catalog-sorting-options li {
-  margin-right: 70px;
+  margin-right: 71px;
 }
 
 .catalog-sorting-options li:last-child {
@@ -1494,6 +1524,7 @@ body {
   line-height: 18px;
   text-decoration: none;
   color: rgba(0, 0, 0, .3);
+  letter-spacing: -0.28px;
   border-bottom: 1px dotted var(--basic-red);
 }
 .catalog-sorting-options a.current {
@@ -1505,7 +1536,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 39px;
+  min-width: 38px;
 }
 
 .catalog-wrapper { 
@@ -1647,7 +1678,7 @@ body {
   width: 135px;
   flex-direction: column;
   position: absolute;
-  padding-top: 20px;
+  padding-top: 8px;
   z-index: 2;
   color: inherit;
   opacity: 0;
