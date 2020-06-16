@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8" />
   <title>HTML Academy: Техномарт</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,700;1,400&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/style.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
@@ -17,9 +17,9 @@
       <div class="container">
         <div class="top-menu-wrapper">
           <div class="logo">
-            <span class="main-logo">
+            <a href="index.html" class="main-logo">
               <img src="img/logo-technomart.svg" width="108" height="18" alt="Логотип магазина «Техномарт»" />
-            </span>
+            </a>
           </div>
           <div class="search">
             <div class="search-input-wrapper">
@@ -58,7 +58,7 @@
           </div>
           <!-- DIV для группировки кнопок -->
           <div class="profile-wrapper">
-            <div href="#" class="button-profile">
+            <div class="button-profile">
               <a href="#">
                 <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -107,7 +107,7 @@
       <!-- Хлебные крошки списком как навигация -->
       <ul class="catalog-breadcrumbs">
         <li>
-          <a href="#"><img src="img/icon-home.svg" alt="Иконка вернуться домой" /></a>
+          <a href="#"><img width="14" height="12" src="img/icon-home.svg" alt="Иконка вернуться домой" /></a>
         </li>
         <li><a class="heading-fivefold uppercase" href="#">Каталог</a></li>
         <li><a class="heading-fivefold uppercase" href="#">Инструмент</a></li>
@@ -203,7 +203,7 @@
                 </li>
               </ul>
             </fieldset>
-            <button type="button" class="button-filtering label uppercase">Показать</button>
+            <button type="submit" class="button-filtering label uppercase">Показать</button>
           </form>
         </div>
         <!-- DIV для большой колонки для списка товаров -->
@@ -233,7 +233,7 @@
           <ul class="catalog-list">
             <li class="products-list-item">
               <div class="products-list-item-link">
-                <img src="img/products/perforator-0001.jpg" alt="Изображение перфоратора" />
+                <img src="img/products/perforator-0001.jpg" width="184" height="164" alt="Изображение перфоратора" />
                 <h2>Перфоратор BOSCH BFG 9000</h2>
                 <p>32500 Р.</p>
                 <p class="new-price">25500 Р.</p>
@@ -248,7 +248,7 @@
                 <div class="badge-wrapper">
                   <div class="badge-new">New</div>
                 </div>
-                <img src="img/products/perforator-0002.jpg" alt="Изображение перфоратора" />
+                <img src="img/products/perforator-0002.jpg" width="184" height="164" alt=" Изображение перфоратора" />
                 <h2>Перфоратор BOSCH BFG 3000</h2>
                 <p>22500 Р.</p>
                 <p class="new-price">15500 Р.</p>
@@ -260,7 +260,7 @@
             </li>
             <li class="products-list-item">
               <div class="products-list-item-link">
-                <img src="img/products/perforator-0003.jpg" alt="Изображение перфоратора" />
+                <img src="img/products/perforator-0003.jpg" width="184" height="164" alt="Изображение перфоратора" />
                 <h2>Перфоратор BOSCH BFG 6000</h2>
                 <p>30500 Р.</p>
                 <p class="new-price">25500 Р.</p>
@@ -275,7 +275,7 @@
                 <div class="badge-wrapper">
                   <div class="badge-new">New</div>
                 </div>
-                <img src="img/products/perforator-0004.jpg" alt="Изображение перфоратора" />
+                <img src="img/products/perforator-0004.jpg" width="184" height="164" alt="Изображение перфоратора" />
                 <h2 class="bold">Перфоратор BOSCH BFG 2000</h2>
                 <p class="new-price">25500 Р.</p>
                 <div class="products-list-item-order">
@@ -286,7 +286,7 @@
             </li>
             <li class="products-list-item">
               <div class="products-list-item-link">
-                <img src="img/products/perforator-0003.jpg" alt="Изображение перфоратора" />
+                <img src="img/products/perforator-0003.jpg" width="184" height="164" alt="Изображение перфоратора" />
                 <h2>Перфоратор BOSCH BFG 6000</h2>
                 <p>30500 Р.</p>
                 <p class="new-price">25500 Р.</p>
@@ -301,7 +301,7 @@
                 <div class="badge-wrapper">
                   <div class="badge-new">New</div>
                 </div>
-                <img src="img/products/perforator-0004.jpg" alt="Изображение перфоратора" />
+                <img src="img/products/perforator-0004.jpg" width="184" height="164" alt="Изображение перфоратора" />
                 <h2 class="bold">Перфоратор BOSCH BFG 2000</h2>
                 <p class="new-price">25500 Р.</p>
                 <div class="products-list-item-order">
@@ -315,7 +315,7 @@
                 <div class="badge-wrapper">
                   <div class="badge-new">New</div>
                 </div>
-                <img src="img/products/perforator-0004.jpg" alt="Изображение перфоратора" />
+                <img src="img/products/perforator-0004.jpg" width="184" height="164" alt="Изображение перфоратора" />
                 <h2 class="bold">Перфоратор BOSCH BFG 2000</h2>
                 <p class="new-price">25500 Р.</p>
                 <div class="products-list-item-order">
@@ -326,7 +326,7 @@
             </li>
             <li class="products-list-item">
               <div class="products-list-item-link">
-                <img src="img/products/perforator-0003.jpg" alt="Изображение перфоратора" />
+                <img src="img/products/perforator-0003.jpg" width="184" height="164" alt="Изображение перфоратора" />
                 <h2>Перфоратор BOSCH BFG 6000</h2>
                 <p>30500 Р.</p>
                 <p class="new-price">25500 Р.</p>
@@ -341,7 +341,7 @@
                 <div class="badge-wrapper">
                   <div class="badge-new">New</div>
                 </div>
-                <img src="img/products/perforator-0004.jpg" alt="Изображение перфоратора" />
+                <img src="img/products/perforator-0004.jpg" width="184" height="164" alt="Изображение перфоратора" />
                 <h2 class="bold">Перфоратор BOSCH BFG 2000</h2>
                 <p class="new-price">25500 Р.</p>
                 <div class="products-list-item-order">
@@ -353,10 +353,10 @@
           </ul>
           <!-- Пагинация -->
           <ul class="catalog-pagination">
-            <li><a href="#" class="paragraph-secondary current">1</a></li>
-            <li><a href="#" class="paragraph-secondary">2</a></li>
-            <li><a href="#" class="paragraph-secondary">3</a></li>
-            <li><a href="#" class="paragraph-secondary">Следующая</a></li>
+            <li><a href="#" class="current">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#" class="next uppercase">Следующая</a></li>
           </ul>
         </div>
       </div>
@@ -386,7 +386,7 @@
         <!-- Блок для 1го ряда подвала -->
         <div class="row">
           <a href="index.html" class="main-logo">
-            <img src="img/logo-technomart.svg" alt="Логотип магазина «Техномарт»" />
+            <img src="img/logo-technomart.svg" width="108" height="18" alt="Логотип магазина «Техномарт»" />
           </a>
           <ul class="footer-navigation">
             <li><a class="paragraph-secondary" href="#">Компания</a></li>
@@ -421,17 +421,17 @@
             <ul class="footer-socials">
               <li>
                 <a href="#">
-                  <img src="img/social/icon-vk.svg" alt="Иконка ВКонтакте" />
+                  <img src="img/social/icon-vk.svg" width="26" height="15" alt="Иконка ВКонтакте" />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <img src="img/social/icon-fb.svg" alt="Иконка Facebook" />
+                  <img src="img/social/icon-fb.svg" width="12" height="22" alt="Иконка Facebook" />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <img src="img/social/icon-insta.svg" alt="Иконка Instagram" />
+                  <img src="img/social/icon-insta.svg" width="21" height="21" alt="Иконка Instagram" />
                 </a>
               </li>
             </ul>
@@ -462,7 +462,7 @@
       </svg>
     </button>
     <div class="modal-order-content">
-      <img src="img/icon-mark.svg" alt="Иконка с галочкой" />
+      <img width="66" height="66" src="img/icon-mark.svg" alt="Иконка с галочкой" />
       <h2 class="heading-tertiary">Товар добавлен в корзину!</h2>
     </div>
     <div class="modal-order-controls">

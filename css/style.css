@@ -57,9 +57,12 @@
   --promo-sales-background: #8ED78F;
   --popular-block-background: #F9F5F0;
   --product-item-border: #EAEAEA;
+  --product-item-line-through: #A9A9A9;
   --filter-range-background: #d7dcde;
+  --filter-range-toggle-shadow: #cfcfcf;
   --filter-range-bar-background: #00ca74;
   --modal-contacts-action-background: #F4F4F4;
+  --modal-order-controls-background: #F1F1F1;
 }
 
 /* 2. Типографика */
@@ -133,7 +136,7 @@ body {
 /* 3.2 Кнопки Закладки, Корзина, Оформить заказ */
 .button-bookmark,
 .button-cart {
-  padding-left: 50px;
+  padding-left: 43px;
   position: relative;
   background-color: var(--transparent);
   transition: var(--basic-transition);
@@ -157,6 +160,10 @@ body {
   transform: translate(-50%, -50%);
   opacity: .3;
   transition: var(--basic-transition);
+}
+
+.button-cart {
+  padding-left: 49px;
 }
 
 .button-cart::before {
@@ -191,7 +198,7 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 10px 24px;
+  padding: 10px 25px;
   background-color: var(--white);
   font-size: 21px;
   line-height: 21px;
@@ -407,7 +414,7 @@ body {
   content: "";
   position: absolute;
   top: 50%;
-  left: 20px;
+  left: 26px;
   width: 17px;
   height: 17px;
   background-image: url("../img/icon-search.svg");
@@ -429,7 +436,7 @@ body {
 .search-input {
   width: 100%;
   position: relative;
-  padding-left: 40px;
+  padding-left: 42px;
   color: var(--white);
   background-color: var(--transparent);
   border: none;
@@ -579,7 +586,7 @@ body {
   display: block;
   padding-top: 16px;
   padding-bottom: 16px;
-  padding-left: 24px;
+  padding-left: 29px;
   padding-right: 24px;
   color: var(--white);
   text-decoration: none;
@@ -607,7 +614,7 @@ body {
 }
 
 .footer-navigation-wrapper {
-  padding-bottom: 40px;
+  padding-bottom: 50px;
 }
 
 .footer-contacts-wrapper {
@@ -633,6 +640,7 @@ body {
   align-items: flex-end;
   justify-content: space-between;
   margin-left: auto;
+  margin-bottom: 7px;
 }
 
 .footer-navigation a {
@@ -651,6 +659,7 @@ body {
   margin-left: auto;
   width: 525px;
   align-items: center;
+  margin-top: 15px;
 }
 
 .footer-navigation-secondary a {
@@ -659,7 +668,7 @@ body {
 
 .footer-address {
   color: var(--white);
-  margin-right: 72px;
+  margin: 24px 72px 0px 0px;
 }
 
 .footer-address a {
@@ -686,6 +695,7 @@ body {
   display: flex;
   padding: 0;
   margin: 0;
+  margin-left: 45px;
 }
 
 .footer-socials li {
@@ -720,11 +730,11 @@ body {
 }
 
 .footer-contacts-list li {
-  margin-right: 66px;
+  margin-right: 53px;
 }
 
 .footer-contacts-list li:last-child {
-  margin-right: 0px;
+  margin-right: 13px;
 }
 
 .footer-contacts-list span {
@@ -763,7 +773,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px 20px 20px;
+  padding: 18px 38px 24px 22px;
   color: var(--white);
 }
 
@@ -849,16 +859,20 @@ body {
   display: grid;
   grid-template-columns: 192px 1fr 192px;
   grid-template-rows: 1fr;
-  gap: 1px 1px;
   grid-template-areas: "slider-action slider-paging .";
   grid-area: slider-footer;
 }
 
 .promo-slider-action {
   grid-area: slider-action;
-  display: contents;
 }
 
+.promo-slider-action a {
+  display: block;
+  margin-bottom: 20px;
+  width: 160px;
+
+}
 
 .promo-slider-paging {
   grid-area: slider-paging;
@@ -917,22 +931,23 @@ body {
 
 .popular-products {
   display: grid;
-  margin-top: 60px;
+  margin-top: 58px;
 }
 
 .popular-products-header,
 .popular-brands-header {
   display: grid;
-  grid-template-columns: 1fr 220px;
-  padding: 30px;
+  grid-template-columns: 1fr 192px;
+  padding: 25px 15px 25px 27px;
   background-color: var(--popular-block-background);
-  margin-bottom: 20px;
+  margin-bottom: 21px;
 }
 
 .popular-products-header h2,
 .popular-brands-header h2 {
   color: var(--basic-grey-light);
   margin: 0;
+  align-self: center;
 }
 
 .popular-products-header a,
@@ -983,8 +998,8 @@ body {
 /* 12. Главная - Блок: Сервисы (слайдер: доставка, гарантия, кредит) */
 .service-block {
   background-color: var(--basic-background);
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding-top: 66px;
+  padding-bottom: 47px;
 }
 
 .service-block-wrapper {
@@ -1063,7 +1078,7 @@ body {
 .service-block-slider-content { 
   grid-area: service-block-slider-content;
   position: relative;
-  padding-top: 48px;
+  padding-top: 45px;
   overflow: hidden;
 }
 
@@ -1073,7 +1088,7 @@ body {
 
 .service-block-slider-content-item h2 {
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 29px;
   color: var(--basic-grey-light);
 }
 
@@ -1084,8 +1099,8 @@ body {
 
 .service-block-slider-content-item img {
   position: absolute;
-  bottom: -64px;
-  right: 0;
+  bottom: -44px;
+  right: 2px;
 }
 
 /* 13. Главная - Блок: Компания и Контакты */
@@ -1094,7 +1109,7 @@ body {
   width: 100%;
   grid-template-columns: 1fr 300px;
   padding-top: 72px;
-  padding-bottom: 78px;
+  padding-bottom: 68px;
   grid-template-areas: "about contacts";
 }
 
@@ -1120,14 +1135,18 @@ body {
   margin: 0;
   margin-bottom: 24px;
  }
+ 
 .about-content p,
 .contacts-content p {
   margin: 0;
  }
 
-.about-content p:nth-child(2),
-.contacts-content p:nth-child(2) {
-  margin-bottom: 24px;
+ .about-content a {
+   width: 188px;
+ }
+
+ .about-content p:nth-child(2) {
+   margin-bottom: 24px;
  }
 
  .about-content .company-list {
@@ -1158,11 +1177,15 @@ body {
 }
 
 .contacts-content h2 {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
  .contacts-content a {
    align-self: stretch;
+ }
+
+ .contacts-link-map {
+   margin-top: 12px;
  }
 
 /* 14. Каталог - Хлебные крошки */
@@ -1236,6 +1259,7 @@ body {
   border: none;
   padding: 0;
   margin: 0;
+  margin-top: 5px;
 }
 
 .catalog-filter-group::after {
@@ -1256,7 +1280,7 @@ body {
 .range-controls {
   position: relative;
   height: 41px;
-  margin-bottom: 15px;
+  margin-bottom: 6px;
   padding-top: 39px;
   padding-right: 20px;
   padding-left: 20px;
@@ -1285,7 +1309,7 @@ body {
   border: 8px solid var(--white);
   background-color: var(--filter-range-background);
   border-radius: 50%;
-  box-shadow: 0 2px 1px 0 #cfcfcf;
+  box-shadow: 0 2px 1px 0 var(--filter-range-toggle-shadow);
   cursor: pointer;
 }
 
@@ -1336,24 +1360,25 @@ body {
   align-items: center;
   justify-content: space-between;
   background-color: var(--filter-background);
-  padding: 8px 16px;
-  margin-bottom: 28px;
+  padding: 8px 20px;
+  margin-bottom: 32px;
 }
 
 .catalog-filtering {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 13px;
   line-height: 18px;
   background-color: var(--filter-background);
   margin: 0;
-  padding: 8px 16px;
-  margin-bottom: 14px;
+  padding: 8px 17px;
+  margin-bottom: 16px;
 }
 
 .catalog-filtering-list .filter-option {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .filter-option label {
@@ -1420,7 +1445,7 @@ body {
 }
 
 .catalog-sorting h3 {
-  font-family: 'Cuprum', "Arial", sans-serif;
+  font-family: 'PT Sans', "Arial", sans-serif;
   font-size: 13px;
   line-height: 18px;
   margin: 0;
@@ -1484,12 +1509,12 @@ body {
   align-items: center;
   justify-content: flex-start;
   list-style: none;
-  margin: 48px 0;
+  margin: 57px 0;
   padding: 0;
 }
 
 .catalog-pagination li {
-  margin-right: 10px;
+  margin-right: 6px;
 }
 
 .catalog-pagination li:last-child {
@@ -1497,6 +1522,9 @@ body {
 }
 
 .catalog-pagination a {
+  font-family: "PT Sans";
+  font-size: 13px;
+  line-height: 18px;
   padding: 10px 16px;
   text-decoration: none;
   color: inherit;
@@ -1518,8 +1546,12 @@ body {
   background-color: var(--basic-red);
 }
 
+.catalog-pagination a.next {
+  padding: 10px 32px;
+}
+
 .catalog-category-about {
-  padding: 64px 0;
+  padding: 69px 0 71px 0px;
   background-color: var(--basic-background);
 }
 
@@ -1559,7 +1591,7 @@ body {
   text-decoration: none;
   color: inherit;
   text-align: center;
-  padding: 32px 32px 20px 32px;
+  padding: 27px 25px 20px 22px;
   background-color: var(--white);
   overflow: hidden;
   transition: var(--basic-transition);
@@ -1616,8 +1648,8 @@ body {
 
 .badge-wrapper {
   position: absolute;
-  right: -70px;
-  top: 10px;
+  right: -76px;
+  top: 8px;
 }
 
 .badge-new {
@@ -1642,7 +1674,7 @@ body {
   font-family: "PT Sans", "Arial", sans-serif;
   font-size: 18px;
   line-height: 20px;
-  margin-top: 38px;
+  margin-top: 39px;
   margin-bottom: 8px;
 }
 
@@ -1652,12 +1684,13 @@ body {
   font-size: 17px;
   line-height: 18px;
   text-decoration: line-through;
-  color: #A9A9A9;
-  margin-bottom: 12px;
+  margin-bottom: 13px;
+  color: var(--product-item-line-through);
 }
 
 .products-list-item-link .new-price {
   position: relative;
+  margin: 0;
   margin-top: auto;
   width: 64px;
   padding: 10px 32px;
@@ -1671,7 +1704,7 @@ body {
   content: "";
   position: absolute;
   top: 0;
-  right: -28px;
+  right: -33px;
   width: 0;
   height: 0;
   border: 19px solid var(--white);
@@ -1809,7 +1842,7 @@ textarea.contacts-input {
   align-items: center;
   justify-content: space-between;
   padding: 40px 112px;
-  background-color: #F1F1F1;
+  background-color: var(--modal-order-controls-background);
 }
 
 .modal-order-controls a {
