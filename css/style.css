@@ -560,7 +560,7 @@ body {
 .profile-links a:last-child:before {
   content: "";
   position: absolute;
-  left: 45%;
+  left: 47%;
   top: 50%;
   display: inline-block;
   width: 4px;
@@ -804,6 +804,7 @@ body {
   width: 135px;
   text-align: center;
   padding: 10px 0;
+  letter-spacing: -0.78px;
 }
 
 .promo-list-item h2 {
@@ -818,15 +819,30 @@ body {
   background-color: var(--special-yellow);
  }
 
+ .promo-list-materials img {
+  margin-right: 6px;
+  margin-bottom: -6px;
+}
+
  .promo-list-tool { 
   grid-area: tool;
   background-color: var(--special-blue);
+ }
+
+ .promo-list-tool img {
+   margin-top: 10px;
+   margin-right: -6px;
  }
 
 .promo-list-machine { 
   grid-area: machine;
   background-color: var(--special-lilac);
  }
+
+ .promo-list-machine img {
+  margin-top: 10px;
+  margin-right: -6px;
+}
 
  .promo-slider { 
   grid-area: slider;
@@ -945,10 +961,21 @@ body {
   grid-area: sales;
   background-color: var(--promo-sales-background);
  }
+
+ .promo-list-sales img {
+  margin-top: 9px;
+  margin-right: 7px;
+}
+
  .promo-list-delivery { 
   grid-area: delivery;
   background-color: var(--special-yellow);
  }
+
+ .promo-list-delivery img {
+  margin-top: 10px;
+  margin-right: -6px;
+}
 
 /* 10. Главная - Блок: Популярные продукты */
 
@@ -1787,7 +1814,7 @@ body {
   width: 620px;
 }
 .modal-contacts-wrapper {
-  padding: 50px 80px 36px 80px;
+  padding: 39px 80px 17px 80px;
 }
 .modal-contacts-wrapper p {
   margin: 0;
@@ -1820,13 +1847,13 @@ body {
 
 .contacts-input-group label {
   display: inline-block;
-  margin-bottom: 12px;
+  margin-bottom: 9px;
   vertical-align: middle;
 }
 
 textarea.contacts-input {
   margin: 0;
-  margin-top: 12px;
+  margin-top: 9px;
   resize: none;
 }
 
@@ -1838,7 +1865,7 @@ textarea.contacts-input {
 }
 
 .contacts-action {
-  padding: 37px 80px;
+  padding: 56px 79px 38px 79px;
   background-color: var(--modal-contacts-action-background);
 }
 
